@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–3 are complete. Phase 4 technical implementation and agent verification are complete; participant generated-test review remains pending. Phase 5 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -69,7 +69,7 @@ Use a dedicated implementation prompt for this stage. Do not include the complet
 - [x] Run the relevant unit tests and existing regression suite.
 - [x] Commit this stage with a message explaining the limits and the reason for enforcing them.
 
-**Exit evidence:** a self-contained implementation commit with passing tests and corresponding interaction logs. Technical evidence: [PHASE_4.md](docs/evidence/PHASE_4.md). Debug/Release: 98 .NET cases pass; exact-form transport: 42 Node cases pass. OpenSpec task 2.8 remains unchecked pending actual participant test review; stage two is not implemented.
+**Exit evidence:** a self-contained implementation commit with passing tests and corresponding interaction logs. Technical evidence: [PHASE_4.md](docs/evidence/PHASE_4.md). Debug/Release: 98 .NET cases pass; exact-form transport: 42 Node cases pass. OpenSpec task 2.8 is complete: participant replied `done` after the test-review request. Stage two is not implemented.
 
 ## 5. Implement stage two: two distinct approvers
 

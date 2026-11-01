@@ -1,6 +1,6 @@
 # Phase 4 — single-approver implementation
 
-Status: technical implementation and independent agent verification complete; participant generated-test review remains pending. This evidence is included in the standalone stage-one implementation commit. Resolve its revision with `git log -- docs/evidence/PHASE_4.md` rather than treating the pre-implementation revision as the tested feature commit.
+Status: complete, including participant test-review confirmation. The standalone stage-one implementation revision is `5cf4d61d738523483898db2baf67b3221de5dacf`. This later documentation update records the participant response; it changes no implementation or tests.
 
 ## Resulting behavior
 
@@ -53,3 +53,7 @@ The participant said `start`, authorizing stage one after the reviewed specifica
 ## Practical limits and next stage
 
 State is in memory and locking is local-process only. Restart/sign in again after role migration. Very large returned values can be displayed approximately by JavaScript number formatting; creation transport and server storage/approval remain exact. Phase 5 is the separate two-distinct-approver implementation. Workshop review prompt, participant findings verdicts, Playwright, mutation evidence, PR publication and demo remain pending.
+
+## Participant test-review confirmation
+
+On 1 November 2026, the participant replied exactly `done` with the stage-one test-review guide active. This closes task 2.8 for implementation commit `5cf4d61`, with no changes requested. It does not assign individual finding verdicts or claim additional test runs. The earlier pending-review descriptions above describe the implementation-time state; the confirmation capture and updated CLI progress are in `phase-4/participant-review-progress.json`.

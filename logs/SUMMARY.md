@@ -151,12 +151,23 @@ Independently review stage-one implementation and generated tests in /Users/shra
 Narrowly review the final stage-one creation-transport correction in backend/src/InvoiceApp.Api/wwwroot/app.js and dependency-free Node tests in backend/tests/ui/invoice-create.test.cjs. Parent remains /root/stage_one; same reviewer task /root/stage_one/test_review, no new child. The root reproduced that Number(amount.value) silently rounded fractional input before server validation. Verify the actual form-submit handler now preserves the original numeric value as a JSON number token without Number/parseFloat, API shape changes or global serializer hacks; lexical normalization may change JSON syntax only. Verify tests exercise actual handler with vm DOM/fetch stubs, exact threshold fractions and decimal-max-plus-fraction, ordinary cents/trailing zeros/exponents, invalid text preventing fetch/injection, and safe customer JSON escaping. Inspect README commands/precision wording. Run node --test backend/tests/ui/*.test.cjs using Node v24.18.0 if available. Read-only code review: update only docs/agents/stage-one-test-review.md with this follow-up prompt/result, findings and actual check. Keep participant verdicts pending and do not claim browser or human review. No stage-two or .NET production changes are included in this correction.
 ```
 
+## phase-4-participant-review
+
+- Capture: agent-authored record of actual participant reply; linked transcript export
+- Outcome: Phase 4 complete; OpenSpec progress 10/26; Phase 5 not started
+
+Request:
+
+```text
+done
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 293 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 303 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.

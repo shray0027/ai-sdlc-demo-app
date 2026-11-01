@@ -71,3 +71,7 @@ npm test
 The test starts and stops its own loopback server, creates a unique synthetic invoice and verifies all persisted fields after a Manager rejection and reload. It does not reuse port 5000. Optional `INVOICE_E2E_PORT` selects a dedicated free port; an existing listener causes failure rather than reuse.
 
 Stryker.NET is pinned to 4.13.0 in the local tool manifest. `dotnet tool restore` restores it. The comparable mutation runs and exact isolated-worktree commands are in [mutation evidence](docs/evidence/phase-6/mutation/README.md). BEFORE and AFTER scores are both **100.00%**; confirmed kills increased from **97 to 100**, while timeouts decreased from **3 to 0**. No numerical score increase is claimed.
+
+## Assignment demo preparation
+
+See [ASSIGNMENT.md](ASSIGNMENT.md), the [nine-minute runbook](docs/DEMO_RUNBOOK.md), and [submission checklist](docs/SUBMISSION_CHECKLIST.md). Run `python3 scripts/demo_rehearsal.py --serve` for a separate owned loopback app with fresh synthetic UI invoices; Ctrl+C stops it. The participant recording/upload/share link remains pending.

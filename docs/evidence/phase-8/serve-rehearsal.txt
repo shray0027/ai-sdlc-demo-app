@@ -1,0 +1,15 @@
+Owned demo app: http://127.0.0.1:52136
+PASS Manager inclusive: USD 50,000.00 approved
+PASS Director inclusive: USD 500,000.00 approved
+PASS Manager over limit: HTTP 409; all 11 fields unchanged; Manager approval limit is USD 50,000 inclusive; a Director is required.
+PASS Manager first + distinct Director second: Approved; first history preserved
+PASS duplicate Director after new login and distinct Manager second: HTTP 409; all 11 fields unchanged
+PASS Director first + distinct Director second: Approved; first history preserved
+Rehearsal passed against the real API; session tokens were not printed.
+UI seed: INV-1011 | USD 50,000.00 | PendingApproval
+UI seed: INV-1012 | USD 50,000.01 | PendingApproval
+UI seed: INV-1013 | USD 500,000.01 | PendingApproval
+Open the URL above. Use the demo accounts in AGENTS.md. Ctrl+C stops only this app.
+
+Stopping owned demo app.
+Owned demo server stopped; in-memory demo data discarded.

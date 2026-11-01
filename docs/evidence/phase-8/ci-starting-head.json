@@ -1,0 +1,185 @@
+{
+  "observedAt": "2026-11-01T16:48:48.242125+00:00",
+  "commits": [
+    {
+      "authoredDate": "2026-11-01T08:34:42Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T08:37:15Z",
+      "messageBody": "",
+      "messageHeadline": "docs: establish assignment baseline and preserve setup evidence",
+      "oid": "ee55d6c5eb60fb56871949a5ebd304ab96901487"
+    },
+    {
+      "authoredDate": "2026-11-01T08:45:43Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T08:45:43Z",
+      "messageBody": "",
+      "messageHeadline": "chore: configure assignment context logging and agent responsibilities",
+      "oid": "1475b49183591f86bb0ea47d764816a55bd0c9f5"
+    },
+    {
+      "authoredDate": "2026-11-01T10:25:26Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T10:25:26Z",
+      "messageBody": "",
+      "messageHeadline": "docs: specify invoice approval rules with reviewed acceptance criteria",
+      "oid": "63c21979e2e626298a7bd3be4dfd1c3255b63664"
+    },
+    {
+      "authoredDate": "2026-11-01T10:56:31Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T10:56:31Z",
+      "messageBody": "\u2026oices",
+      "messageHeadline": "feat: enforce inclusive approval limits without mutating rejected inv\u2026",
+      "oid": "5cf4d61d738523483898db2baf67b3221de5dacf"
+    },
+    {
+      "authoredDate": "2026-11-01T14:02:52Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T14:02:52Z",
+      "messageBody": "",
+      "messageHeadline": "docs: record participant completion of stage-one test review",
+      "oid": "e869ce4634c6b9d8af125abcddf386ca18fe333d"
+    },
+    {
+      "authoredDate": "2026-11-01T14:30:52Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T14:30:52Z",
+      "messageBody": "\u2026 invoices",
+      "messageHeadline": "feat: require distinct approvers and a Director second for high-value\u2026",
+      "oid": "df5fa1427501266bbcd7e91cfe35279cbaed458b"
+    },
+    {
+      "authoredDate": "2026-11-01T15:14:49Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T15:14:49Z",
+      "messageBody": "",
+      "messageHeadline": "docs: record participant approval of stage-two generated tests",
+      "oid": "54138b503167d1e0962f7522845856a62256d3fb"
+    },
+    {
+      "authoredDate": "2026-11-01T16:04:29Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T16:04:29Z",
+      "messageBody": "\u2026ations",
+      "messageHeadline": "test: cover persisted Manager rejection and strengthen failure explan\u2026",
+      "oid": "437dd899f782a937da38cb58bb517cd40207aeb1"
+    },
+    {
+      "authoredDate": "2026-11-01T16:19:34Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T16:19:34Z",
+      "messageBody": "\u2026eferences",
+      "messageHeadline": "docs: preserve reviewed browser and mutation evidence with revision r\u2026",
+      "oid": "0b91c4acc18a641be463b8803b0eee4d78c4d7f3"
+    },
+    {
+      "authoredDate": "2026-11-01T16:23:59Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T16:23:59Z",
+      "messageBody": "",
+      "messageHeadline": "docs: open draft PR and map final acceptance checks for workshop review",
+      "oid": "8bc6966dcba87c31aa51a7cee0d7a330d7bcb6ff"
+    },
+    {
+      "authoredDate": "2026-11-01T16:37:44Z",
+      "authors": [
+        {
+          "email": "shrayanand000@gmail.com",
+          "id": "MDQ6VXNlcjU5MjAyOTIx",
+          "login": "shray0027",
+          "name": "Shray"
+        }
+      ],
+      "committedDate": "2026-11-01T16:37:44Z",
+      "messageBody": "",
+      "messageHeadline": "docs: complete workshop review and record participant finding verdicts",
+      "oid": "f5694efcc41b9022d89d610598ee2a9e22b24e87"
+    }
+  ],
+  "headRefOid": "f5694efcc41b9022d89d610598ee2a9e22b24e87",
+  "isDraft": false,
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-01T16:38:46Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/shray0027/ai-sdlc-demo-app/actions/runs/41327314755/job/124909862837",
+      "name": "build-and-test",
+      "startedAt": "2026-11-01T16:37:53Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    }
+  ],
+  "url": "https://github.com/shray0027/ai-sdlc-demo-app/pull/1"
+}

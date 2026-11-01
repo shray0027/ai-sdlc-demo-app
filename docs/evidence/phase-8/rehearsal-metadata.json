@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-11-01T16:40:26.872450+00:00",
+  "source_revision": "f5694efcc41b9022d89d610598ee2a9e22b24e87",
+  "added_helper": "scripts/demo_rehearsal.py (new working-tree file at execution)",
+  "server_port": 52136,
+  "owned_server_stopped": true,
+  "ui_seed_count": 3,
+  "serve_exit_code": 0,
+  "video_recorded": false,
+  "video_uploaded": false
+}

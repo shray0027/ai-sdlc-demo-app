@@ -314,12 +314,36 @@ Exact workshop prompt: review this PR against our checklist . Report findings by
 Earlier finding verdicts: Reviewed all nine; mark each Fixed
 ```
 
+## phase-8-demo-review
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: No new findings; coordinator rehearsal outputs inspected, no independent rerun/browser/mutation/recording claims.
+
+Request:
+
+```text
+Follow-up for existing /root/workshop_review, parent /root. Review only the new Phase 8 local demo helper scripts/demo_rehearsal.py and docs/DEMO_RUNBOOK.md, using invoice-assignment review/testing guidance and the same participant workshop prompt already saved. Application/test/tool bytes remain identical to reviewed head f5694ef (47 manifest entries). Scope is new helper correctness, process ownership/teardown, real HTTP assertion meaning, synthetic seed usability and runbook accuracy; don't repeat the application review or broaden to video recording, since participant explicitly chose to record/upload. Coordinator actually ran default mode and --serve with SIGINT; logs and server-closed proof are in docs/evidence/phase-8/. Inspect those plus source. Do not rerun browser/mutation or modify helper/app/tests/docs/logs. Write only docs/agents/phase-eight-demo-review.md with severity/file/line/fix/uncertainty for any actionable new findings, or no findings if justified. Do not invent participant verdicts. No child agent or commit. Report exact checks and limits. New finding IDs use P8-01 etc. No helper modifications should be made by you.
+
+```
+
+## phase-8-preparation
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: Preparation complete; Phase 8 recording/upload/share link and playback/access verification remain pending. No images/video committed.
+
+Request:
+
+```text
+continue
+Recording choice: I’ll record/upload and share the link
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 516 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 564 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.
@@ -335,6 +359,6 @@ Native lifecycle events recorded: 5.
 - [01a197c8-f8e3-7583-881e-5812155098f5](transcripts/01a197c8-f8e3-7583-881e-5812155098f5.jsonl): 40 selected records.
 - [01a197c9-249c-7640-a286-eef5e27763cd](transcripts/01a197c9-249c-7640-a286-eef5e27763cd.jsonl): 104 selected records.
 - [01a197cc-ea34-7b91-ac79-745d1e88457a](transcripts/01a197cc-ea34-7b91-ac79-745d1e88457a.jsonl): 64 selected records.
-- [01a197f5-2c96-7f21-a892-adf6caa94177](transcripts/01a197f5-2c96-7f21-a892-adf6caa94177.jsonl): 34 selected records.
+- [01a197f5-2c96-7f21-a892-adf6caa94177](transcripts/01a197f5-2c96-7f21-a892-adf6caa94177.jsonl): 53 selected records.
 
 Coverage, redaction and activation limits are described in [README.md](README.md).

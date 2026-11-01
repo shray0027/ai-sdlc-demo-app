@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 is complete, including participant review of the browser/strengthened tests for 437dd89. Phase 7 is complete: PR #1 is open, the exact workshop prompt was independently applied with no actionable new findings, and all nine earlier findings are participant-confirmed Fixed. Phase 8 final demo/submission remains pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 is complete, including participant review of the browser/strengthened tests for 437dd89. Phase 7 is complete: PR #1 is open, the exact workshop prompt was independently applied with no actionable new findings, and all nine earlier findings are participant-confirmed Fixed. Phase 8 write-up, log audit and demo rehearsal are prepared; participant recording/upload and the verified share link remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -129,10 +129,10 @@ For a .NET 8 implementation, use the assignment's provided Stryker installation 
 ## 8. Prepare the write-up and demo
 
 - [x] Create `ASSIGNMENT.md` at the application repository root. Draft contains actual feature/context/test/mutation evidence; final PR/review/video links remain Phase 8 work.
-- [ ] Explain the feature, specification decisions, context/skills/hooks, agent delegation, meaningful human interventions, and verification results.
+- [x] Explain the feature, specification decisions, context/skills/hooks, agent delegation, meaningful human interventions, and verification results.
 - [ ] Include the PR URL, specification/test/log paths, mutation scores before and after as text, remaining limitations, and the final video link.
-- [ ] Generate a readable log summary and verify the structured log against the nine suggested categories.
-- [ ] Rehearse a live run with suitable seeded invoice data.
+- [x] Generate a readable log summary and verify the structured log against the nine suggested categories. See `docs/evidence/phase-8/LOG_AUDIT.md`.
+- [x] Rehearse a live run with suitable seeded invoice data. Real API default/seeded UI modes passed using `scripts/demo_rehearsal.py`; runbook: `docs/DEMO_RUNBOOK.md`.
 - [ ] Record an 8–10-minute MP4, upload it, and verify the submitted link is accessible to reviewers.
 
 Suggested nine-minute recording:
@@ -179,10 +179,10 @@ Keep logs current throughout the work rather than assembling them only in the fi
 ## 10. Final completion check
 
 - [ ] Every item in the requirements submission checklist has a real artifact or link.
-- [ ] Final tests correspond to the submitted production code; mutation evidence identifies the revisions tested.
-- [ ] All review findings have participant verdicts, and fixed findings have been verified.
-- [ ] The specification, behavior, tests, logs, PR description, and write-up agree.
-- [ ] No sample log values are represented as execution evidence.
+- [x] Final tests correspond to the submitted production code; mutation evidence identifies the revisions tested.
+- [x] All review findings have participant verdicts, and fixed findings have been verified.
+- [x] The specification, behavior, tests, logs, PR description, and write-up agree. Video remains explicitly pending in the handoff.
+- [x] No sample log values are represented as execution evidence. Historical setup reconstruction and source reference JSON remain labeled.
 - [ ] The submitted PR preserves incremental commits, and the video plays for a reviewer.
 
 Begin with Phase 1. Repository inspection determines the exact setup commands and test locations; resolve specification ambiguities before implementing the dependent approval transitions.

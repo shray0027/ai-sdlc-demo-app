@@ -1,0 +1,119 @@
+{
+  "observedAt": "2026-11-01T17:01:01.589056+00:00",
+  "scope": "All current structured task records and exported JSONL syntax/provenance fields; not exhaustive semantic verification of every transcript",
+  "task_records": 27,
+  "categories": {
+    "AI tool and model": {
+      "required_keys": [
+        "ai_tool",
+        "model"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Agent details": {
+      "required_keys": [
+        "agent"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Prompts and interactions": {
+      "required_keys": [
+        "request"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Skills and sub-agents": {
+      "required_keys": [
+        "skills_used"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Tools and integrations": {
+      "required_keys": [
+        "tools_used"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "AI actions and outputs": {
+      "required_keys": [
+        "actions"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Human intervention": {
+      "required_keys": [
+        "human_intervention"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Execution evidence": {
+      "required_keys": [
+        "timestamp",
+        "evidence"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    },
+    "Outcome": {
+      "required_keys": [
+        "outcome"
+      ],
+      "present_in_records": 27,
+      "missing_ids": []
+    }
+  },
+  "examples": {
+    "AI tool and model": "phase-7-workshop-review: observed gpt-6.1-sol and Codex; earliest setup labels exact model unknown",
+    "Agent details": "phase-7-workshop-review and transcript metadata: independent task, parent and session identifiers",
+    "Prompts and interactions": "exact workshop prompt and saved delegation; raw transcript tool calls/results",
+    "Skills and sub-agents": "phase-7-review-completion: actual review skill and child relationship; no skill inferred from availability",
+    "Tools and integrations": "actual per-task tools_used plus linked tool events; configured MCP is not proof of invocation",
+    "AI actions and outputs": "actions with reports/source paths and raw execution outputs",
+    "Human intervention": "phase-7-review-completion: exact nine-Fixed reply; Phase 8 exact participant recording choice",
+    "Execution evidence": "timestamps, immutable revisions, 47 input hashes, test reports and source-line transcript provenance",
+    "Outcome": "stage outcomes retain historical pending status; later acknowledgment records supply current completion"
+  },
+  "transcript_files": 18,
+  "transcript_selected_events": 1280,
+  "per_transcript_events": {
+    "01a1962b-509e-7242-8b6a-237e1d68184a": 32,
+    "01a1963c-ca5d-7b93-88dc-d1050165e8d3": 564,
+    "01a19643-4f87-7121-89ab-0f45a59cb0ec": 30,
+    "01a19643-8489-75d3-a9d5-abacc5963028": 6,
+    "01a19643-9ccb-77c0-8079-876566695e8b": 10,
+    "01a19644-59c4-7d70-baaa-8c1a5abc99bf": 11,
+    "01a19645-ebc3-7db2-9f13-96129875c428": 8,
+    "01a19646-aee5-7b20-b9e6-bf94cb0a91f9": 6,
+    "01a19650-d018-7d80-86a4-d08d23efc7b8": 52,
+    "01a1969f-a291-70e3-bb75-d52300478602": 25,
+    "01a196ac-9913-7ff0-aa52-912a845f8e7f": 92,
+    "01a196ae-fa0d-7773-8027-3d12bd391687": 60,
+    "01a1976f-24f3-7673-9a57-7156901c1daa": 64,
+    "01a19773-53d8-7031-b381-c6f1daff5a4d": 59,
+    "01a197c8-f8e3-7583-881e-5812155098f5": 40,
+    "01a197c9-249c-7640-a286-eef5e27763cd": 104,
+    "01a197cc-ea34-7b91-ac79-745d1e88457a": 64,
+    "01a197f5-2c96-7f21-a892-adf6caa94177": 53
+  },
+  "native_lifecycle_events": 5,
+  "reconstructed_record_ids": [
+    "setup-001"
+  ],
+  "non_empty_skill_records": 25,
+  "records_with_explicit_subagents": 10,
+  "limits": [
+    "Field presence is not proof of semantic correctness or future capture",
+    "Structured task metadata is agent-authored; available text/tool transcripts are explicit automatic exports",
+    "Initial setup reconstruction remains labeled and does not claim native hooks",
+    "Five actual native CLI lifecycle events do not prove activation in the existing IDE session",
+    "No configured-but-unused connector, exact unknown model, human judgment, recording or upload is fabricated",
+    "Best-effort redaction and original source references remain documented; no private/system/reasoning export is claimed"
+  ]
+}

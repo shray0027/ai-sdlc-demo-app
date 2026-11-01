@@ -1,0 +1,28 @@
+Original root: /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app
+Detached worktree: /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree
+Production and original test revision: 54138b503167d1e0962f7522845856a62256d3fb
+
+Setup in original root:
+git worktree add --detach .tools/mutation-worktree 54138b503167d1e0962f7522845856a62256d3fb
+export DOTNET_ROOT="$PWD/.tools/dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
+dotnet new tool-manifest
+dotnet tool install dotnet-stryker --version 4.13.0
+cp .config/dotnet-tools.json .tools/mutation-worktree/.config/
+
+All subsequent dotnet commands from detached worktree with absolute original-root DOTNET_ROOT/PATH:
+dotnet tool restore
+dotnet test backend/InvoiceApp.sln
+dotnet stryker --config-file stryker-config.json --output .tools/stryker-output --skip-version-check
+
+The exact same mutation command/configuration is used for BEFORE and AFTER.
+
+Exact repeat commands (SDK always from original checkout):
+export DOTNET_ROOT="/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
+cd "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree"
+dotnet test backend/tests/InvoiceApp.Tests/InvoiceApp.Tests.csproj --filter FullyQualifiedName~ApprovalServiceTests
+dotnet test backend/InvoiceApp.sln
+dotnet stryker --config-file stryker-config.json --output .tools/stryker-output --skip-version-check
+
+AFTER adds two non-draft submit theory cases (173 vs 171 total); same full test project selected, no filters during mutation runs.

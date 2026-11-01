@@ -1,0 +1,4 @@
+- Creating change 'invoice-approval-limits' with schema 'spec-driven'...
+Created change 'invoice-approval-limits' at openspec/changes/invoice-approval-limits/
+Schema: spec-driven
+Next: openspec status --change invoice-approval-limits

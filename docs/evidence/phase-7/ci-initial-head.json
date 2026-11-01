@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-11-01T16:23:45.391874+00:00",
+  "headRefOid": "0b91c4acc18a641be463b8803b0eee4d78c4d7f3",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-01T16:23:08Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/shray0027/ai-sdlc-demo-app/actions/runs/41325947069/job/124905779662",
+      "name": "build-and-test",
+      "startedAt": "2026-11-01T16:21:52Z",
+      "status": "COMPLETED",
+      "workflowName": "CI"
+    }
+  ],
+  "url": "https://github.com/shray0027/ai-sdlc-demo-app/pull/1"
+}

@@ -1,0 +1,23 @@
+{
+  "base_revision": "54138b503167d1e0962f7522845856a62256d3fb",
+  "production_unchanged": true,
+  "mutant_fingerprints_match": true,
+  "report_sources_match": true,
+  "before_counts": {
+    "Ignored": 35,
+    "Killed": 97,
+    "Timeout": 3
+  },
+  "after_counts": {
+    "Ignored": 35,
+    "Killed": 100
+  },
+  "before_score_percent": 100.0,
+  "after_score_percent": 100.0,
+  "changed_experiment_inputs": [
+    "backend/tests/InvoiceApp.Tests/ApprovalServiceTests.cs"
+  ],
+  "current_checkout_matches_after_hashes": true,
+  "browser_fields_unchanged": 11,
+  "browser_http_status": 409
+}

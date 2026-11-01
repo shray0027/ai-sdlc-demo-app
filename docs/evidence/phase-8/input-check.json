@@ -1,0 +1,8 @@
+{
+  "starting_commit": "f5694efcc41b9022d89d610598ee2a9e22b24e87",
+  "application_test_tool_inputs_matched": 47,
+  "manifest": "docs/evidence/phase-7/tested-input-hashes.json",
+  "demo_helper_sha256": "0a890dcb25fc47b941a68a9ea4fc74cdbb5990764e6e29570752c40c926010c3",
+  "helper_status": "new Phase 8 helper, actually executed in default and --serve modes; not part of the earlier application review",
+  "video_status": "Participant will record/upload and share the link; no video exists in this evidence"
+}

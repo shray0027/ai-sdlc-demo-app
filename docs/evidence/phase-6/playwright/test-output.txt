@@ -1,0 +1,12 @@
+
+> test
+> playwright test
+
+
+Running 1 test using 1 worker
+
+(node:23993) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/manager-limit.spec.ts:7:5 › Manager cannot approve USD 50,000.01; persisted invoice stays completely unchanged after reload (507ms)
+
+  1 passed (3.8s)

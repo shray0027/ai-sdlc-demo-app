@@ -8,3 +8,20 @@ node_modules/
 .env
 test-results/
 playwright-report/
+
+# Repository-local .NET installation
+.tools/
+.DS_Store
+
+# Assignment source screenshots stay local; submit transcribed requirements.
+requirements/*.jpeg
+requirements/*.jpg
+requirements/*.png
+
+# Python logger/skill validation caches
+__pycache__/
+*.pyc
+
+# Local mutation and browser diagnostics; committed evidence is text/JSON.
+StrykerOutput/
+output/playwright/

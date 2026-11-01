@@ -1,0 +1,25 @@
+schema: spec-driven
+
+context: |
+  This change is the AI-in-SDLC assignment in requirements/REQUIREMENTS.md.
+  Keep single-approver and two-approver implementations in separate tasks and commits.
+  Participant chose Manager or Director as first high-value approver, with a distinct Director second.
+  Participant chose positive USD amounts with at most two decimal places, rejecting rather than rounding unsupported precision.
+  FR-04 (distinct users) and FR-05 (complete unchanged rejection state) require explicit scenarios.
+  Do not invent participant decisions or test/review evidence.
+  Source screenshots stay untracked. Preserve tool-generated planning artifacts and execution logs.
+
+rules:
+  proposal:
+    - Explain the legacy Approver/Admin migration and surface compatibility changes.
+  specs:
+    - Map FR-01 through FR-05 to named requirements and concrete Given/When/Then scenarios.
+    - Keep ordinary role limits separate from first-approval eligibility for high-value invoices.
+    - Specify authenticated identity, pending-first-approval fields, and unchanged rejected state.
+  design:
+    - Describe an atomic approval transition for the singleton in-memory repository without putting rules in API controllers.
+    - Distinguish participant choices from agent-selected implementation details.
+  tasks:
+    - Keep all implementation and verification tasks unchecked until actually executed.
+    - Give stage one and stage two their own delegated implementation prompts, tests and commits.
+    - Include Playwright rejection coverage, comparable mutation runs and participant test/review judgments.

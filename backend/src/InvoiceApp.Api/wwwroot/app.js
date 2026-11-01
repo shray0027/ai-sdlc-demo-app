@@ -73,7 +73,11 @@
       reject.addEventListener('click', () => decide(`/approvals/${invoice.id}/reject`, { reason: reason.value }));
 
       return el('li', {},
-        el('span', {}, `${invoice.id} · ${invoice.customerName} · ${money.format(invoice.amount)}`),
+        el('span', {},
+          `${invoice.id} · ${invoice.customerName} · ${money.format(invoice.amount)}`,
+          el('span', { class: 'approval-progress' }, invoice.firstApprovedBy
+            ? `First approved by ${invoice.firstApprovedBy} (${invoice.firstApprovedRole}). Awaiting a distinct Director for second approval.`
+            : 'Awaiting approval.')),
         el('span', {}, approve),
         el('div', { class: 'reject-row' }, reason, reject));
     }));
@@ -113,13 +117,24 @@
     }
   });
 
+  // Normalize only JSON number syntax; never convert money through a JS Number.
+  // The server remains responsible for positive amounts and whole-cent policy.
+  function amountToken(value) {
+    const match = value.trim().match(/^([+-]?)(?:(\d+)(?:\.(\d*))?|\.(\d+))([eE][+-]?\d+)?$/);
+    if (!match) throw new Error('Enter a numeric USD amount.');
+    const integer = (match[2] || '0').replace(/^0+(?=\d)/, '');
+    const fraction = match[3] === undefined ? match[4] : match[3];
+    return (match[1] === '-' ? '-' : '') + integer +
+      (fraction ? `.${fraction}` : '') + (match[5] || '');
+  }
+
   $('new-invoice-form').addEventListener('submit', async (event) => {
     event.preventDefault();
     showError('create-error', '');
     try {
       await api('/invoices', {
         method: 'POST',
-        body: JSON.stringify({ customerName: $('customer').value, amount: Number($('amount').value) })
+        body: `{"customerName":${JSON.stringify($('customer').value)},"amount":${amountToken($('amount').value)}}`
       });
       $('new-invoice-form').reset();
       refresh();

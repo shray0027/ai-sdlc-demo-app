@@ -27,6 +27,7 @@ public class SessionAuthMiddleware
             if (session is null)
             {
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsJsonAsync(new { error = "A valid signed-in session is required." });
                 return;
             }
 

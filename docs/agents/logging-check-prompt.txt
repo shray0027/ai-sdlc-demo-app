@@ -1,0 +1,1 @@
+Read AGENTS.md and scripts/interaction_log.py in this repository. Report the command to run unit tests with the local SDK and one concrete limitation of the interaction logger. Keep the answer under 120 words. Do not edit files, execute tests, spawn agents, or commit. This is a real read-only Phase 2 logging verification task.

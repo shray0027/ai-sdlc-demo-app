@@ -1,0 +1,6 @@
+Setup attempts, not baseline scores:
+1. Read referenced testing guidance in SKILL.md. Optional references/testing.md does not exist; no missing required guidance.
+2. Local tool install succeeded pinned 4.13.0; dotnet stryker --version failed because --version specifies dashboard project version. Recorded dotnet tool list --local and actual Stryker banner instead.
+3. Initial config rejected output/skip-version-check JSON keys. Preserved setup-invalid-config.txt. Moved them to CLI options supported by pinned --help.
+4. First valid syntax attempt used perTest coverage, encountered unexpected dynamic DateTime.UtcNow MemberData names, and was interrupted with exit 130; preserved setup-coverage-warning.txt. No score used.
+5. Final measured config uses coverage-analysis off. Initial-run dynamic MemberData identity warnings still appear, but coverage is not collected/matched and every mutant runs all tests; authoritative docs explicitly document this behavior: https://stryker-mutator.io/docs/stryker-net/configuration/#coverage-analysis-string . Both measured runs keep this setting.

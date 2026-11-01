@@ -1,0 +1,345 @@
+Tested input revision: 0b91c4acc18a641be463b8803b0eee4d78c4d7f3
+
+$ .tools/openspec/node_modules/.bin/openspec list --json
+{
+  "changes": [
+    {
+      "name": "invoice-approval-limits",
+      "completedTasks": 23,
+      "totalTasks": 26,
+      "lastModified": "2026-11-01T16:13:05.802Z",
+      "status": "in-progress"
+    }
+  ],
+  "root": {
+    "path": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app",
+    "source": "nearest"
+  }
+}
+
+Exit code: 0
+
+$ .tools/openspec/node_modules/.bin/openspec instructions apply --change invoice-approval-limits --json
+{
+  "changeName": "invoice-approval-limits",
+  "changeDir": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/proposal.md"
+    ],
+    "specs": [
+      "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/specs/invoice-approval/spec.md"
+    ],
+    "design": [
+      "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/design.md"
+    ],
+    "tasks": [
+      "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 26,
+    "complete": 23,
+    "remaining": 3
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1.1 Independently review proposal/spec/design/tasks against FR-01–FR-05, record findings and participant decisions separately, and verify strict OpenSpec validation passes with any resulting revisions. Evidence: `docs/agents/specification-review.md`, `specification-review-dispositions.md`, `specification-review-recheck.md`, `docs/decisions/approval-policy.md`, and `docs/evidence/openspec/18-validation-after-review.txt`.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 7
+    },
+    {
+      "id": "2",
+      "description": "1.2 Save and delegate this stage-one prompt with task/parent IDs: “Implement only single-approver limits from invoice-approval-limits design: migrate trusted Manager/Director roles, numeric positive USD cents, detached copy-on-write repository semantics, inclusive Manager 50,000 and Director 500,000, clear API errors and full-state immutable failures. Above 500,000 fail closed with a clear unavailable-two-person-workflow conflict. Do not implement first-approval metadata or two-person completion. Add/review stage-one unit/API/repository tests, run regressions, update relevant docs and return a separate stage-one commit.” Verify the actual delegation prompt/result and commit are recorded in interaction evidence.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 8
+    },
+    {
+      "id": "3",
+      "description": "2.1 Replace live-reference reads/Update with a shared-lock copy-on-write mutation boundary in IInvoiceRepository, InMemoryInvoiceRepository and FakeInvoiceRepository; route Submit/Approve/Reject and Remove through the same lock contract. Verify repository tests cover detached GetAll/GetById/GetByIds/Add/Mutate results, retained callback references, and exceptions after working-copy mutation committing nothing.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 12
+    },
+    {
+      "id": "4",
+      "description": "2.2 Add shared Domain positive numeric-cents validation and invoke it before creation storage and inside approval transitions; verify 0.01, 50000.000 and decimal-range values are handled without overflow, while zero/negative/50000.001/500000.001 values fail without rounding or state changes, including injected invoices.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 13
+    },
+    {
+      "id": "5",
+      "description": "2.3 Pass canonical authenticated username and role into Domain, enforce Manager/Director authority and inclusive final limits, and fail closed above 500,000 in this stage. Verify FR-01 “Manager below and at inclusive limit” / “Manager above limit in single-approval range”, FR-02 “Director below and at inclusive limit”, blank identity and temporary high-value immutable rejection tests.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 14
+    },
+    {
+      "id": "6",
+      "description": "2.4 Migrate demo.approver to Manager, add demo.director1/demo.director2, retain Admin administration only and deny legacy/unknown approval roles. Update account/behavior docs and verify login roles, Admin deletion and denial of Admin/legacy/unknown approval and rejection authority through API tests.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 15
+    },
+    {
+      "id": "7",
+      "description": "2.5 Return nonempty JSON error reasons from session middleware, role filters and controller/domain error mapping; verify API tests for 401/403/404/400/409 and “Client identity and role spoofing has no authority”, using server-session identity despite payload/browser metadata changes.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 16
+    },
+    {
+      "id": "8",
+      "description": "2.6 Add independent complete-state snapshot assertions and fresh stored reads for every stage-one failed approval path, including Draft/Approved/Rejected, missing invoice, invalid amount/identity, role and limit failures. Verify FR-05 “All failed approval branches preserve persisted state” and “Missing invoice remains absent” with populated sentinel metadata, including creation and decision times/notes.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 17
+    },
+    {
+      "id": "9",
+      "description": "2.7 Add real repository race tests using separate ApprovalService instances for competing single final decisions, submit/approve, approve/reject and approve/delete; verify valid serial outcomes, no mixed final metadata, no resurrection and stable detached responses.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 18
+    },
+    {
+      "id": "10",
+      "description": "2.8 Review generated stage-one tests as an agent and obtain the participant's actual test-review result separately; run dotnet test backend/InvoiceApp.sln with the local .NET 8 environment, record actual commands/results and create the standalone stage-one commit explaining inclusive limits and atomic immutable failures. Verify no two-person transition is included in that commit. Technical implementation, agent test review and Debug/Release runs are complete; participant test review is complete for commit `5cf4d61` (exact reply: `done`, no changes requested). See `docs/evidence/phase-4/TEST_REVIEW.md` and `docs/evidence/PHASE_4.md`. Participant feedback is now recorded separately from agent review; individual finding verdicts remain unsupplied.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 19
+    },
+    {
+      "id": "11",
+      "description": "3.1 After the passing stage-one commit, save and delegate this separate prompt with task/parent IDs: “Implement only the two-person extension on the committed single-approver limits, following invoice-approval-limits spec/design. Add nullable FirstApprovedBy/FirstApprovedRole/FirstApprovedAt; above 500,000 accept Manager or Director first while pending, then a distinct Director second. Reject duplicate canonical identity even across sessions or roles, preserve complete state on every failure and preserve first metadata after completion or intentional rejection. Add unit/API/concurrency tests and UI pending progress, rerun stage-one regressions, update docs and return a separate stage-two commit.” Verify the actual delegation/result is captured independently of stage one.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 23
+    },
+    {
+      "id": "12",
+      "description": "3.2 Add the three first-approval fields and all-or-none invariant to detached copying, seeds, API JSON and complete-state assertions; implement first and final branches only inside Domain callbacks. Verify “First approval preserves pending state”, “Single-approval final decision”, and retained first fields after valid completion.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 24
+    },
+    {
+      "id": "13",
+      "description": "3.3 Replace only stage one’s temporary above-500,000 “two-person workflow unavailable” denial tests with first/second-approval expectations; retain every lower-value role/limit, amount, identity and full-state regression. Add FR-02 above-limit and FR-03 first/second tests: “Director above inclusive limit”, “Manager first and distinct Director second”, “Director first and distinct Director second”, and “Distinct Manager cannot complete”. Verify USD 500,000.00 still finishes in one valid Director decision and USD 500,000.01 never does.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 25
+    },
+    {
+      "id": "14",
+      "description": "3.4 Add FR-04 tests for “Same Director tries twice”, “Same Director obtains another session” (API re-login/new token), and “Same identity with different role”; verify clear reasons and fresh full-state equality preserving first identity/role/time and null final fields.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 26
+    },
+    {
+      "id": "15",
+      "description": "3.5 Cover intentional rejection after first approval by Manager/Director with nonblank reason, blank reason and terminal-state failures, plus partial/malformed first metadata failing closed. Verify “Intentional rejection after first approval” preserves first metadata and every failed branch uses complete snapshots.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 27
+    },
+    {
+      "id": "16",
+      "description": "3.6 Add high-value real-repository races for same Director first requests, distinct Director requests, Manager/Director ordering, competing final approvers and approve/reject/delete; verify “Simultaneous attempts by same Director”, “Competing distinct first and final approvals” and “Approval competes with rejection or deletion” as valid serial outcomes without overwritten history.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 28
+    },
+    {
+      "id": "17",
+      "description": "3.7 Render pending first-approval identity/progress and distinct-Director requirement from server JSON, retain visible decision errors and Manager over-limit Approve action. Update behavior docs and verify “UI explains progress” across refresh/reload without using browser role as authorization.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 29
+    },
+    {
+      "id": "18",
+      "description": "3.8 Agent-review generated stage-two tests, obtain actual participant test-review feedback, rerun the full unit/API/repository suite with retained stage-one regressions and the explicitly superseding high-value transition tests from 3.3, record results and create the separate stage-two commit explaining two distinct approvers. Verify both implementation commit references are retained. Technical implementation, independent agent review and Debug/Release checks are complete; participant stage-two test review is complete for `df5fa14` (exact answer: `Reviewed; satisfied with the tests`). See `docs/evidence/phase-5/TEST_REVIEW.md` and `docs/evidence/PHASE_5.md`. Participant feedback is recorded; individual finding verdicts remain separate.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 30
+    },
+    {
+      "id": "19",
+      "description": "4.1 Use the Playwright skill and page objects with role/label locators to implement “Manager rejection survives reload”: create unique USD 50,000.01 invoice, submit it, capture full state, attempt Manager approval through the UI, assert visible limit reason, reload and compare complete fresh API state plus visible PendingApproval. Run the test and save actual output/trace and production revision.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 34
+    },
+    {
+      "id": "20",
+      "description": "4.2 Review the browser test with the participant and record the actual judgment, update test instructions and verify the documented e2e command runs using the repository local SDK environment and isolated test data rather than relying on seed state.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 35
+    },
+    {
+      "id": "21",
+      "description": "4.3 Set up the assignment-pinned Stryker 4.13.0 for .NET 8 and a focused approval-rule mutation scope; run the initial feature tests and preserve before-strengthening report, command, tool/runtime versions, production/test revisions, scope, counts and actual score as text. Verify unit baseline passes before mutation execution.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 36
+    },
+    {
+      "id": "22",
+      "description": "4.4 Inspect surviving mutants and add meaningful assertions/cases addressing observed gaps, including threshold operators, duplicate Director logic and full-state metadata; record agent reasoning and participant review of generated improvements, and verify targeted tests fail against the relevant faulty behavior where feasible.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 37
+    },
+    {
+      "id": "23",
+      "description": "4.5 Rerun mutation testing with unchanged production revision and matching scope/configuration/tool version; preserve after-strengthening report/counts/score and explain survivors or unavoidable comparison differences. Run unit/API/repository and Playwright regression checks and commit test/evidence improvements with actual command/results and revision references. Do not invent a target score.",
+      "done": true,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 38
+    },
+    {
+      "id": "24",
+      "description": "5.1 Verify all named scenarios below are linked to actual tests/evidence, run strict OpenSpec validation and final regression commands against the submitted code, and record unresolved limitations without claiming unexecuted checks.",
+      "done": false,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 42
+    },
+    {
+      "id": "25",
+      "description": "5.2 Obtain the exact workshop review prompt, run the independent diff review, assign finding IDs and obtain the participant's fixed/dismissed/deferred verdict with reasons for every finding; verify fixes with affected tests and preserve evidence. Keep human review pending until supplied.",
+      "done": false,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 43
+    },
+    {
+      "id": "26",
+      "description": "5.3 Verify the PR/write-up evidence links the separate implementation commits, participant choices versus agent-selected design, generated-test judgments, UI result, matching mutation reports and actual review findings/verdicts. Deliver artifact links and remaining process requirements to the coordinator without fabricating PR/demo/human-review completion.",
+      "done": false,
+      "sourcePath": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits/tasks.md",
+      "line": 44
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "This change is the AI-in-SDLC assignment in requirements/REQUIREMENTS.md.\nKeep single-approver and two-approver implementations in separate tasks and commits.\nParticipant chose Manager or Director as first high-value approver, with a distinct Director second.\nParticipant chose positive USD amounts with at most two decimal places, rejecting rather than rounding unsupported precision.\nFR-04 (distinct users) and FR-05 (complete unchanged rejection state) require explicit scenarios.\nDo not invent participant decisions or test/review evidence.\nSource screenshots stay untracked. Preserve tool-generated planning artifacts and execution logs.\n",
+  "root": {
+    "path": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app",
+    "source": "nearest"
+  }
+}
+
+Exit code: 0
+
+$ .tools/openspec/node_modules/.bin/openspec validate invoice-approval-limits --strict
+Change 'invoice-approval-limits' is valid
+
+Exit code: 0
+
+$ dotnet build backend/InvoiceApp.sln --configuration Release
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InvoiceApp.Domain -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Domain/bin/Release/net8.0/InvoiceApp.Domain.dll
+  InvoiceApp.Api -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Api/bin/Release/net8.0/InvoiceApp.Api.dll
+  InvoiceApp.Tests -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/tests/InvoiceApp.Tests/bin/Release/net8.0/InvoiceApp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.62
+
+Exit code: 0
+
+$ dotnet test backend/InvoiceApp.sln --configuration Release --no-build
+Test run for /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/tests/InvoiceApp.Tests/bin/Release/net8.0/InvoiceApp.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:   173, Skipped:     0, Total:   173, Duration: 3 s - InvoiceApp.Tests.dll (net8.0)
+
+Exit code: 0
+
+$ node --test backend/tests/ui/approval-progress.test.cjs backend/tests/ui/invoice-create.test.cjs
+✔ actual rendering shows server first approval after refresh and fresh app reload, then removes completed pending item (38.297458ms)
+✔ visible decision error survives refresh state for Manager approval limit is USD 50,000 inclusive; a Director is required. (1.45675ms)
+✔ visible decision error survives refresh state for A distinct approver is required; the same user cannot approve twice. (1.057458ms)
+✔ visible decision error survives refresh state for A distinct Director is required for the second approval. (0.890667ms)
+✔ form preserves exact numeric token 50000.0000000000000000000000001 (31.094375ms)
+✔ form preserves exact numeric token 500000.000000000000000000000001 (0.450083ms)
+✔ form preserves exact numeric token 79228162514264337593543950335.1 (0.339375ms)
+✔ form preserves exact numeric token 50000.000 (0.300083ms)
+✔ form preserves exact numeric token 0.01 (0.695875ms)
+✔ form preserves exact numeric token 49999.99 (0.264583ms)
+✔ form preserves exact numeric token 50000.01 (0.261208ms)
+✔ form preserves exact numeric token 500000.01 (0.265541ms)
+✔ form preserves exact numeric token 5e4 (0.276417ms)
+✔ form preserves exact numeric token 1e-2 (0.317833ms)
+✔ form preserves exact numeric token 500000000000000000000000000001e-24 (0.267459ms)
+✔ form preserves exact numeric token 0 (0.249208ms)
+✔ form preserves exact numeric token -0.01 (0.234ms)
+✔ form preserves exact numeric token 0.001 (0.266458ms)
+✔ form normalizes JSON syntax without changing value: +00050000.000 (0.271375ms)
+✔ form normalizes JSON syntax without changing value: .01 (0.250625ms)
+✔ form normalizes JSON syntax without changing value: -.01 (0.245334ms)
+✔ form normalizes JSON syntax without changing value: 000.0100 (0.226417ms)
+✔ form normalizes JSON syntax without changing value: 1. (0.232417ms)
+✔ form normalizes JSON syntax without changing value: +001.e+004 (0.248417ms)
+✔ form normalizes JSON syntax without changing value:   +00050.00100e-02   (0.228667ms)
+✔ invalid amount cannot inject JSON or submit: "" (0.281833ms)
+✔ invalid amount cannot inject JSON or submit: " " (0.209709ms)
+✔ invalid amount cannot inject JSON or submit: "." (0.215459ms)
+✔ invalid amount cannot inject JSON or submit: "+" (0.236875ms)
+✔ invalid amount cannot inject JSON or submit: "NaN" (0.210625ms)
+✔ invalid amount cannot inject JSON or submit: "Infinity" (0.216959ms)
+✔ invalid amount cannot inject JSON or submit: "0x10" (0.20975ms)
+✔ invalid amount cannot inject JSON or submit: "1_000" (0.215625ms)
+✔ invalid amount cannot inject JSON or submit: "1,000" (0.226667ms)
+✔ invalid amount cannot inject JSON or submit: "1e" (0.251042ms)
+✔ invalid amount cannot inject JSON or submit: "1e+" (0.220458ms)
+✔ invalid amount cannot inject JSON or submit: "1 2" (0.541667ms)
+✔ invalid amount cannot inject JSON or submit: "1\n2" (0.243625ms)
+✔ invalid amount cannot inject JSON or submit: "\"50000\"" (0.204833ms)
+✔ invalid amount cannot inject JSON or submit: "1,\"role\":\"Director\"" (0.213333ms)
+✔ invalid amount cannot inject JSON or submit: "1}" (0.218542ms)
+✔ invalid amount cannot inject JSON or submit: "1/*comment*/" (0.208333ms)
+✔ invalid amount cannot inject JSON or submit: "1e2,\"customerName\":\"injected\"" (0.215084ms)
+✔ invalid amount cannot inject JSON or submit: "{\"amount\":1}" (0.205625ms)
+✔ invalid amount cannot inject JSON or submit: "1;alert(1)" (0.2175ms)
+✔ customer text is safely JSON encoded alongside exact amount (0.926167ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 88.374417
+
+Exit code: 0
+
+$ npm test -- --reporter=list
+
+> test
+> playwright test --reporter=list
+
+
+Running 1 test using 1 worker
+
+(node:29373) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/manager-limit.spec.ts:7:5 › Manager cannot approve USD 50,000.01; persisted invoice stays completely unchanged after reload (731ms)
+
+  1 passed (3.1s)
+
+Exit code: 0

@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InvoiceApp.Domain -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Domain/bin/Release/net8.0/InvoiceApp.Domain.dll
+  InvoiceApp.Api -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Api/bin/Release/net8.0/InvoiceApp.Api.dll
+  InvoiceApp.Tests -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/tests/InvoiceApp.Tests/bin/Release/net8.0/InvoiceApp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.90

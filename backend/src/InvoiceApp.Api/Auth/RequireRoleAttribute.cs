@@ -20,7 +20,7 @@ public class RequireRoleAttribute : ActionFilterAttribute
 
         if (session is null || !_roles.Contains(session.Role))
         {
-            context.Result = new StatusCodeResult(StatusCodes.Status403Forbidden);
+            context.Result = new ObjectResult(new { error = "Your role is not authorized for this action." }) { StatusCode = StatusCodes.Status403Forbidden };
         }
     }
 }

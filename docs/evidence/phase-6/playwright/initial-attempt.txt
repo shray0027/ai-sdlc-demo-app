@@ -1,0 +1,46 @@
+
+> test
+> playwright test
+
+
+Running 1 test using 1 worker
+
+(node:23511) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/manager-limit.spec.ts:7:5 › Manager cannot approve USD 50,000.01; persisted invoice stays completely unchanged after reload (844ms)
+
+
+  1) [chromium] › tests/manager-limit.spec.ts:7:5 › Manager cannot approve USD 50,000.01; persisted invoice stays completely unchanged after reload
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Object {
+    -   "role": "Manager",
+    -   "username": "demo.approver",
+    +   "role": undefined,
+    +   "username": undefined,
+      }
+
+       at ../pages/invoice-app.page.ts:30
+
+      28 |       const session = JSON.parse(sessionStorage.getItem('session') || 'null');
+      29 |       return { username: session?.username, role: session?.role };
+    > 30 |     })).toEqual({ username: 'demo.approver', role: 'Manager' });
+         |         ^
+      31 |   }
+      32 |
+      33 |   async createInvoice(customerName: string, amount: string): Promise<string> {
+        at InvoiceAppPage.signInAsManager (/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/e2e/pages/invoice-app.page.ts:30:9)
+        at /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/e2e/tests/manager-limit.spec.ts:10:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/manager-limit-Manager-cann-67cbb-tely-unchanged-after-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/manager-limit-Manager-cann-67cbb-tely-unchanged-after-reload-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/manager-limit.spec.ts:7:5 › Manager cannot approve USD 50,000.01; persisted invoice stays completely unchanged after reload

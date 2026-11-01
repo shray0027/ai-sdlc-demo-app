@@ -1,0 +1,15 @@
+Task: /root/stage_two/test_review
+Parent task: /root/stage_two
+Coordinator: /root
+Session/model: unknown unless supplied by runtime
+Exact initial delegation prompt:
+Independently review stage-two production changes and generated tests in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app against FR-01–FR-05, especially FR-04 distinct canonical username across repeat Director calls, actual login/new token and role changes, FR-05 full persisted unchanged state, all-or-none/invalid first metadata, preserved first history after approval/rejection, exact cents and retained stage-one regressions, real-repository concurrency serial outcomes/stable responses, and UI rendering/refresh/reload/error assertions. Read AGENTS.md, invoice-assignment review/testing skill, relevant OpenSpec spec/design/tasks and actual changed source/tests. This is independent agent test review, not workshop/human review. You must not edit source/tests or other repository files. Investigate concrete defects and gaps, run scoped tests if useful with Node 24.18.0 and repository-local .NET SDK; do not run browser/E2E or mutation tests. Return finding IDs with severity, exact evidence and practical fix, plus what you checked and limitations. No findings must be stated explicitly if none. After fixes I may request a read-only recheck. Parent owns saving your exact result and dispositions; participant verdicts remain pending.
+
+Exact follow-up message 1:
+Follow-up under review: moved high-value null-final-fields validation into EnsureFirstApprovalMetadata so intentional Reject also fails closed for inconsistent pending final metadata. Added Reject assertion to InconsistentTierOrFinalMetadata_FailsClosed. Initial full runs before this small change passed 150 .NET and 46 Node tests; final capture pending your review.
+
+Exact follow-up message 2:
+I independently added populated-first Domain actor/amount rows just now and API Draft/Approved/Rejected plus individual inconsistent-final fields cases; see HighValueHistory_OtherFailedBranchesPreservePopulatedFirstFields and TerminalOrDraftWithFirstHistory_AllDecisionFailuresPreserveState. Adding equivalent populated-first API role/identity/amount rows next to close ST2-T01 completely; please recheck these fixes as part of review.
+
+Exact recheck prompt:
+ST2-T01 fix ready for read-only recheck: populated-first Domain HighValueHistory_OtherFailedBranchesPreservePopulatedFirstFields and API ActorOrAmountDenials_PreservePopulatedFirstHistory now cover Admin/legacy/unknown roles, blank identity, invalid high precision and zero amounts with fresh complete state comparisons. API terminal-history test now covers Draft/Approved/Rejected. Creation tests also explicitly assert all three new camelCase JSON fields initially null. Please recheck the current diff and return your exact final review with finding ST2-T01, technical resolution status, actual test commands/results and remaining limitations. Participant verdict remains pending.

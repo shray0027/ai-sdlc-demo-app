@@ -1,0 +1,5 @@
+PASS: all 135 mutant ids/locations/replacements/mutator names identical.
+PASS: report-embedded production sources identical.
+PASS: before/after hashed production, config and manifest identical.
+PASS: only ApprovalServiceTests.cs changed in source-hash manifests.
+PASS: original copied test bytes match measured AFTER test.

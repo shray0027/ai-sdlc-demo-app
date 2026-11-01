@@ -1,0 +1,54 @@
+Command: node --test backend/tests/ui/*.test.cjs
+Node: v24.18.0
+✔ form preserves exact numeric token 50000.0000000000000000000000001 (21.647958ms)
+✔ form preserves exact numeric token 500000.000000000000000000000001 (0.369209ms)
+✔ form preserves exact numeric token 79228162514264337593543950335.1 (0.304541ms)
+✔ form preserves exact numeric token 50000.000 (0.29925ms)
+✔ form preserves exact numeric token 0.01 (0.699625ms)
+✔ form preserves exact numeric token 49999.99 (0.264583ms)
+✔ form preserves exact numeric token 50000.01 (0.250542ms)
+✔ form preserves exact numeric token 500000.01 (0.227459ms)
+✔ form preserves exact numeric token 5e4 (0.272166ms)
+✔ form preserves exact numeric token 1e-2 (0.311875ms)
+✔ form preserves exact numeric token 500000000000000000000000000001e-24 (0.259167ms)
+✔ form preserves exact numeric token 0 (0.255209ms)
+✔ form preserves exact numeric token -0.01 (0.2135ms)
+✔ form preserves exact numeric token 0.001 (0.220042ms)
+✔ form normalizes JSON syntax without changing value: +00050000.000 (0.270125ms)
+✔ form normalizes JSON syntax without changing value: .01 (0.262ms)
+✔ form normalizes JSON syntax without changing value: -.01 (0.2375ms)
+✔ form normalizes JSON syntax without changing value: 000.0100 (0.21125ms)
+✔ form normalizes JSON syntax without changing value: 1. (0.209084ms)
+✔ form normalizes JSON syntax without changing value: +001.e+004 (0.236584ms)
+✔ form normalizes JSON syntax without changing value:   +00050.00100e-02   (0.225458ms)
+✔ invalid amount cannot inject JSON or submit: "" (0.292708ms)
+✔ invalid amount cannot inject JSON or submit: " " (0.197292ms)
+✔ invalid amount cannot inject JSON or submit: "." (0.198917ms)
+✔ invalid amount cannot inject JSON or submit: "+" (0.206166ms)
+✔ invalid amount cannot inject JSON or submit: "NaN" (0.188791ms)
+✔ invalid amount cannot inject JSON or submit: "Infinity" (0.194625ms)
+✔ invalid amount cannot inject JSON or submit: "0x10" (0.185875ms)
+✔ invalid amount cannot inject JSON or submit: "1_000" (0.195959ms)
+✔ invalid amount cannot inject JSON or submit: "1,000" (0.205167ms)
+✔ invalid amount cannot inject JSON or submit: "1e" (0.226792ms)
+✔ invalid amount cannot inject JSON or submit: "1e+" (0.219125ms)
+✔ invalid amount cannot inject JSON or submit: "1 2" (0.512167ms)
+✔ invalid amount cannot inject JSON or submit: "1\n2" (0.211542ms)
+✔ invalid amount cannot inject JSON or submit: "\"50000\"" (0.191583ms)
+✔ invalid amount cannot inject JSON or submit: "1,\"role\":\"Director\"" (0.198292ms)
+✔ invalid amount cannot inject JSON or submit: "1}" (0.19925ms)
+✔ invalid amount cannot inject JSON or submit: "1/*comment*/" (0.189208ms)
+✔ invalid amount cannot inject JSON or submit: "1e2,\"customerName\":\"injected\"" (0.202625ms)
+✔ invalid amount cannot inject JSON or submit: "{\"amount\":1}" (0.184458ms)
+✔ invalid amount cannot inject JSON or submit: "1;alert(1)" (0.19675ms)
+✔ customer text is safely JSON encoded alongside exact amount (0.864041ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 105.309666
+
+Exit code: 0

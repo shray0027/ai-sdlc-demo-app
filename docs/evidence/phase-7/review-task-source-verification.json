@@ -1,0 +1,22 @@
+[
+  {
+    "task": "5.2",
+    "exact_source_before": "- [ ] 5.2 Obtain the exact workshop review prompt, run the independent diff review, assign finding IDs and obtain the participant's fixed/dismissed/deferred verdict with reasons for every finding; verify fixes with affected tests and preserve evidence. Keep human review pending until supplied.",
+    "evidence": [
+      "docs/agents/workshop-review.md",
+      "docs/evidence/phase-7/FINDINGS.md",
+      "docs/evidence/phase-7/pr-description.md",
+      "ASSIGNMENT.md"
+    ]
+  },
+  {
+    "task": "5.3",
+    "exact_source_before": "- [ ] 5.3 Verify the PR/write-up evidence links the separate implementation commits, participant choices versus agent-selected design, generated-test judgments, UI result, matching mutation reports and actual review findings/verdicts. Deliver artifact links and remaining process requirements to the coordinator without fabricating PR/demo/human-review completion.",
+    "evidence": [
+      "docs/agents/workshop-review.md",
+      "docs/evidence/phase-7/FINDINGS.md",
+      "docs/evidence/phase-7/pr-description.md",
+      "ASSIGNMENT.md"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+
+   _____ _              _               _   _ ______ _______
+  / ____| |            | |             | \ | |  ____|__   __|
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|
+                   __/ |
+                  |___/
+
+
+Stryker.NET failed to mutate your project. For more information see the logs
+below:
+
+
+The allowed keys for the "stryker-config" object are { "additional-timeout",
+"baseline", "break-on-initial-test-failure", "concurrency", "configuration",
+"coverage-analysis", "dashboard-url", "disable-bail", "disable-mix-mutants",
+"ignore-methods", "ignore-mutations", "language-version", "mutate",
+"mutation-level", "project", "project-info", "report-file-name", "reporters",
+"since", "solution", "target-framework", "test-case-filter", "test-projects",
+"test-runner", "thresholds", "verbosity" } but others were found ("output",
+"skip-version-check") in the config file at
+"/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/
+.tools/mutation-worktree/stryker-config.json"

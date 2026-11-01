@@ -1,0 +1,149 @@
+[
+  {
+    "mutant": {
+      "id": "3",
+      "mutatorName": "String mutation",
+      "replacement": "$\"\"",
+      "location": {
+        "start": {
+          "line": 9,
+          "column": 49
+        },
+        "end": {
+          "line": 9,
+          "column": 122
+        }
+      },
+      "status": "Killed",
+      "static": false,
+      "coveredBy": [],
+      "killedBy": [
+        "57606a04-2ccb-9127-14e0-bdaf171e5b53",
+        "17ea4eba-44b7-fcd7-6a84-d53e0e0a8f0d",
+        "1a54bfd6-471f-b556-2829-b95d69e4564b"
+      ]
+    },
+    "killingTests": [
+      {
+        "id": "57606a04-2ccb-9127-14e0-bdaf171e5b53",
+        "name": "InvoiceApp.Tests.ApprovalServiceTests.Submit_NonDraftExplainsFailureAndPreservesCompleteStoredState",
+        "location": {
+          "start": {
+            "line": 24,
+            "column": 5
+          },
+          "end": {
+            "line": 39,
+            "column": 6
+          }
+        }
+      },
+      {
+        "id": "17ea4eba-44b7-fcd7-6a84-d53e0e0a8f0d",
+        "name": "InvoiceApp.Tests.ApprovalServiceTests.Submit_NonDraftExplainsFailureAndPreservesCompleteStoredState",
+        "location": {
+          "start": {
+            "line": 24,
+            "column": 5
+          },
+          "end": {
+            "line": 39,
+            "column": 6
+          }
+        }
+      },
+      {
+        "id": "1a54bfd6-471f-b556-2829-b95d69e4564b",
+        "name": "InvoiceApp.Tests.ApprovalServiceTests.Submit_NonDraftExplainsFailureAndPreservesCompleteStoredState",
+        "location": {
+          "start": {
+            "line": 24,
+            "column": 5
+          },
+          "end": {
+            "line": 39,
+            "column": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "mutant": {
+      "id": "42",
+      "mutatorName": "String mutation",
+      "replacement": "\"\"",
+      "location": {
+        "start": {
+          "line": 47,
+          "column": 41
+        },
+        "end": {
+          "line": 47,
+          "column": 85
+        }
+      },
+      "status": "Killed",
+      "static": false,
+      "coveredBy": [],
+      "killedBy": [
+        "844e2270-350e-9d48-ecc4-6ce309f674a6"
+      ]
+    },
+    "killingTests": [
+      {
+        "id": "844e2270-350e-9d48-ecc4-6ce309f674a6",
+        "name": "InvoiceApp.Tests.ApprovalServiceTests.Reject_RequiresAReason",
+        "location": {
+          "start": {
+            "line": 80,
+            "column": 5
+          },
+          "end": {
+            "line": 91,
+            "column": 6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "mutant": {
+      "id": "91",
+      "mutatorName": "String mutation",
+      "replacement": "\"\"",
+      "location": {
+        "start": {
+          "line": 75,
+          "column": 41
+        },
+        "end": {
+          "line": 75,
+          "column": 90
+        }
+      },
+      "status": "Killed",
+      "static": false,
+      "coveredBy": [],
+      "killedBy": [
+        "1c17b6b1-b21f-00cb-b595-2ef3683fbefd"
+      ]
+    },
+    "killingTests": [
+      {
+        "id": "1c17b6b1-b21f-00cb-b595-2ef3683fbefd",
+        "name": "InvoiceApp.Tests.ApprovalServiceTests.EveryFailedApproval_LeavesFreshCompleteStateUnchanged",
+        "location": {
+          "start": {
+            "line": 134,
+            "column": 5
+          },
+          "end": {
+            "line": 144,
+            "column": 6
+          }
+        }
+      }
+    ]
+  }
+]

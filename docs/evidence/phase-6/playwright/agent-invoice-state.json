@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-11-01T15:49:06.385Z",
+  "baseURL": "http://127.0.0.1:51141",
+  "approvalHttpStatus": 409,
+  "visibleReason": "Manager approval limit is USD 50,000 inclusive; a Director is required.",
+  "before": {
+    "id": "INV-1006",
+    "customerName": "Synthetic phase-six cba446e0-3c8e-4724-b759-7526de6f8b27",
+    "amount": 50000.01,
+    "status": "PendingApproval",
+    "createdAt": "2026-11-01T15:49:06.199161Z",
+    "firstApprovedBy": null,
+    "firstApprovedRole": null,
+    "firstApprovedAt": null,
+    "decidedBy": null,
+    "decidedAt": null,
+    "decisionNote": null
+  },
+  "after": {
+    "id": "INV-1006",
+    "customerName": "Synthetic phase-six cba446e0-3c8e-4724-b759-7526de6f8b27",
+    "amount": 50000.01,
+    "status": "PendingApproval",
+    "createdAt": "2026-11-01T15:49:06.199161Z",
+    "firstApprovedBy": null,
+    "firstApprovedRole": null,
+    "firstApprovedAt": null,
+    "decidedBy": null,
+    "decidedAt": null,
+    "decisionNote": null
+  },
+  "allFieldsUnchangedAfterReload": true
+}

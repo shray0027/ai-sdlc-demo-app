@@ -220,12 +220,72 @@ Request:
 Reviewed; satisfied with the tests
 ```
 
+## phase-6-browser
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: One agent browser pass; coordinator independently passed integrated browser check
+
+Request:
+
+```text
+Implement and run the explicitly requested Phase 6 Playwright test files in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app. Read AGENTS.md, invoice-assignment testing guidance, /Users/shrayanand/.codex/skills/playwright/SKILL.md, current UI/index/API/auth and e2e config/package lock. The assignment explicitly asks for a Playwright test file, so the skill allows @playwright/test rather than redundant CLI-only automation. Verify npx exists. Own ONLY e2e/** and docs/evidence/phase-6/playwright/** plus docs/agents/playwright-implementation.md. Do not edit production/backend/.NET tests, root logs/plans/context/README/.gitignore or commit. Use Node 24.18.0 and repository-local .NET SDK via DOTNET_ROOT/PATH; npm ci retaining lockfile and install required Chromium if absent. Implement one genuine browser test with page objects using getByRole/getByLabel (no CSS/XPath): real demo.approver Manager login; create unique synthetic invoice USD 50,000.01 through UI; submit through UI; capture complete persisted API invoice using the authenticated browser session token without logging the token; attempt approval through UI; verify specific visible Manager-limit reason (and 409 if observed); reload and verify visible PendingApproval plus complete fresh API state equal to before (including all 11 fields/first-history nulls). Do not rely on mutable seed data. Configure a dedicated local test server on a free loopback port with no launch profile and reuseExistingServer false; never reuse/stop a user server on localhost:5000. Ensure Playwright owns/tears down its own server. Preserve actual commands, versions, production revision, test result and sanitized invoice before/after JSON evidence under the assigned evidence path. Keep screenshots/video/traces/HTML reports in ignored runtime directories; do not commit images or any bearer [REDACTED] Prefer text/JSON reports as committed evidence, explain any local ignored trace paths. Run the browser test successfully, inspect its assertions as an agent and report limitations; do not claim participant review. Do not add a browser test for unrelated flows or run mutation testing. Root is running mutation testing in an isolated worktree, so root backend test sources may later gain tests but production will remain unchanged. Record actual skills/tools and exact artifacts. No child agents in this task; coordinator will independently review. Fix routine test/setup failures within the task rather than asking for permission or altering production semantics.
+
+```
+
+## phase-6-mutation
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: Before 100.00% (97 killed, 3 timeout); after 100.00% (100 killed, 0 timeout); no survivors; 135 generated and 35 ignored in each run
+
+Request:
+
+```text
+Execute the Phase 6 comparable mutation experiment for /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app. Read AGENTS.md, invoice-assignment testing guidance, requirements mutation note and OpenSpec tasks 4.3–4.5. Own original-repo .config/dotnet-tools.json, stryker-config.json (or clearly located equivalent), backend/tests/InvoiceApp.Tests/** ONLY for justified strengthening after BEFORE run, docs/evidence/phase-6/mutation/** and docs/agents/mutation-investigation*.md/txt. Do not edit production source, e2e, root README/AGENTS/plans/logs/.gitignore, ASSIGNMENT.md or commit. Another agent owns browser tests in the original checkout. First create a detached isolated worktree under ignored .tools/mutation-worktree at actual clean production/test HEAD (currently 54138b5); use original root absolute .tools/dotnet for SDK/PATH/DOTNET_ROOT, do not install global SDKs/tools or build mutation binaries into original checkout. Install assignment-pinned Stryker.NET 4.13.0 using a local tool manifest, copy/restore that manifest into the isolated worktree as needed; inspect supported CLI/help and authoritative Stryker docs (browse primary docs for niche/uncertain options). Record any setup failures/retries, but never label a broken/mis-scoped run as baseline score. Configure a focused fixed mutation scope including Domain ApprovalService.cs and UsdAmount.cs, same .NET test project (all current 171 cases), mutation level/settings/tool version/reporters/concurrency across both measured runs. Exclude unrelated files by explicit includes, not arbitrary ignored mutants to inflate score. JSON and text reports committed; keep large HTML/temp/binary artifacts ignored in .tools. Record production/test Git revision, source hashes, full exact commands/config/version, counts by status, scope, console score and raw JSON reports for BEFORE. Verify initial unit baseline passes in isolated worktree before mutation. Do NOT modify or weaken initial tests or production before recording this valid BEFORE report. Then delegate one read-only test sub-agent to inspect actual surviving/no-coverage mutants and propose meaningful missing cases/assertions against contracts; save exact prompt/result with child/parent task IDs under docs/agents/mutation-investigation*. It may run targeted tests in isolation but must not mutate production or alter original tests. After BEFORE is preserved, strengthen only meaningful tests based on real gaps, first in isolated worktree; preserve original test content/evidence or a before/after diff. Rerun targeted/full tests, then AFTER mutation with identical configuration/scope and unchanged production bytes. Do not invent a target score, initial deficiency or score improvement; if remaining mutants are equivalent or scores cannot improve, explain precisely with evidence. Copy only reviewed test-strengthening changes back to original checkout (no production changes), and relevant manifest/config/reports/summary evidence. Tell coordinator when BEFORE is captured, when strengthening is ready, and final comparison. Do not race mutation runs or let another process build the same isolated binaries; coordinate child checks between runs. Leave the worktree safely available for reproducibility; do not remove user work. Participant review is not supplied; keep it pending. No production fixes silently included between measured runs; if a genuine bug requires one, report it and separate it from the comparable test-only experiment. Routine tool/build failures should be diagnosed/retried without abandoning authorized work. Final result must include actual scores before/after, counts/statuses, surviving mutant explanations, test commands/results, artifacts, parent/child relationship, skills and limits.
+
+```
+
+## phase-6-mutation-review
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: Three assertion improvements proposed; parent implemented and verified them
+
+Request:
+
+```text
+Parent task: /root/phase_six_mutation (coordinator /root)
+Child task name requested: mutation_test_review
+Read-only mutation investigation. Read AGENTS.md and invoice-assignment testing/review skill in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app. Inspect actual preserved docs/evidence/phase-6/mutation/before-report.json and before-console.txt plus original tests and Domain ApprovalService.cs/UsdAmount.cs. BEFORE is complete at untouched clean 54138b503167d1e0962f7522845856a62256d3fb: 100.00%, 97 Killed, 3 Timeout, 35 Ignored, zero Survived/NoCoverage. Explicit include scope ApprovalService/UsdAmount; 24 out-of-scope and 11 standard block covered filters explain ignored. Coverage off avoids dynamic MemberData matching. Investigate timeout mutants and whether there are any actual surviving/no-coverage gaps; do not invent one to improve an already-perfect score. Propose only meaningful contract assertions if evidence justifies them; if no meaningful strengthening is required say so, and explain existing threshold/duplicate Director/full-state coverage. You may read and run isolated targeted checks only after coordinating with parent; no production or tests edits and no concurrent builds in .tools/mutation-worktree. Return exact findings including remaining limits, skill/tools read, actual execution. Do not write files; parent preserves your result.
+
+```
+
+## phase-6-verification
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: Phase 6 complete; OpenSpec 23/26. Production unchanged; mutation scores both 100.00%, with direct kills increasing 97 to 100.
+
+Request:
+
+```text
+continue
+```
+
+## phase-6-participant-review
+
+- Capture: agent-authored task metadata linked to saved transcript exports
+- Outcome: Participant satisfied with both additions; workshop review and individual finding verdicts remain pending.
+
+Request:
+
+```text
+Reviewed; satisfied with both additions
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 363 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 422 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.
@@ -238,5 +298,8 @@ Native lifecycle events recorded: 5.
 - [01a196ae-fa0d-7773-8027-3d12bd391687](transcripts/01a196ae-fa0d-7773-8027-3d12bd391687.jsonl): 60 selected records.
 - [01a1976f-24f3-7673-9a57-7156901c1daa](transcripts/01a1976f-24f3-7673-9a57-7156901c1daa.jsonl): 64 selected records.
 - [01a19773-53d8-7031-b381-c6f1daff5a4d](transcripts/01a19773-53d8-7031-b381-c6f1daff5a4d.jsonl): 59 selected records.
+- [01a197c8-f8e3-7583-881e-5812155098f5](transcripts/01a197c8-f8e3-7583-881e-5812155098f5.jsonl): 40 selected records.
+- [01a197c9-249c-7640-a286-eef5e27763cd](transcripts/01a197c9-249c-7640-a286-eef5e27763cd.jsonl): 104 selected records.
+- [01a197cc-ea34-7b91-ac79-745d1e88457a](transcripts/01a197cc-ea34-7b91-ac79-745d1e88457a.jsonl): 64 selected records.
 
 Coverage, redaction and activation limits are described in [README.md](README.md).

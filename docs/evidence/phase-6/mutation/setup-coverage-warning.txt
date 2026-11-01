@@ -1,0 +1,49 @@
+
+   _____ _              _               _   _ ______ _______
+  / ____| |            | |             | \ | |  ____|__   __|
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|
+                   __/ |
+                  |___/
+
+
+Version: 4.13.0
+
+[21:16:01 INF] Stryker will use a max of 2 parallel testsessions.
+[21:16:01 INF] Analysis starting.
+[21:16:01 INF] Analyzing 1 test project(s).
+[21:16:02 INF] Found project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/src/InvoiceApp.Domain/InvoiceApp.Domain.csproj to mutate.
+[21:16:02 INF] Analysis complete.
+[21:16:02 INF] Building test project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/tests/InvoiceApp.Tests/InvoiceApp.Tests.csproj (1/1)
+[21:16:03 INF] Building project InvoiceApp.Tests.csproj using dotnet build InvoiceApp.Tests.csproj -c Debug --property:Platform=AnyCPU (directory /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/tests/InvoiceApp.Tests.)
+[21:16:06 INF] Number of tests found: 171 for project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/src/InvoiceApp.Domain/InvoiceApp.Domain.csproj. Initial test run started.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: " ", role: "Director", at: 2026-11-01T15:46:06.8678260Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: null, at: 2026-11-01T15:46:06.8678210Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: "Admin", at: 2026-11-01T15:46:06.8678270Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: null, at: 2026-11-01T15:46:06.8678240Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: "Director", at: 2026-11-01T15:46:06.8678250Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: "Admin", at: 2026-11-01T15:46:06.8692310Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: " ", role: "Director", at: 2026-11-01T15:46:06.8692300Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: null, at: 2026-11-01T15:46:06.8692270Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: null, at: 2026-11-01T15:46:06.8692280Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:10 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: "Director", at: 2026-11-01T15:46:06.8692290Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:11 INF] 135 mutants created
+[21:16:11 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: null, at: 2026-11-01T15:46:12.0411600Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: "Director", at: 2026-11-01T15:46:12.0411630Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: null, at: 2026-11-01T15:46:12.0411620Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: "Admin", at: 2026-11-01T15:46:12.0411650Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: " ", role: "Director", at: 2026-11-01T15:46:12.0411640Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: " ", role: "Director", at: 2026-11-01T15:46:12.0375800Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: null, at: 2026-11-01T15:46:12.0375780Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: null, at: 2026-11-01T15:46:12.0375740Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: "Admin", at: 2026-11-01T15:46:12.0375810Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:16:15 WRN] VsTestRunner: Coverage analysis run encountered a unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: "Director", at: 2026-11-01T15:46:12.0375790Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+Hint: by passing "--open-report or -o" the report will open automatically and
+update the report in real-time.
+[21:16:15 INF] 11    mutants got status Ignored.      Reason: Removed by block already covered filter
+[21:16:15 INF] 24    mutants got status Ignored.      Reason: Removed by mutate filter
+[21:16:15 INF] 35    total mutants are skipped for the above mentioned reasons
+[21:16:15 INF] 100   total mutants will be tested

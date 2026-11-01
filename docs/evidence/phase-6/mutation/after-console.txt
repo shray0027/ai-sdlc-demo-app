@@ -1,0 +1,70 @@
+
+   _____ _              _               _   _ ______ _______
+  / ____| |            | |             | \ | |  ____|__   __|
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|
+                   __/ |
+                  |___/
+
+
+Version: 4.13.0
+
+[21:20:34 INF] Stryker will use a max of 2 parallel testsessions.
+[21:20:34 INF] Analysis starting.
+[21:20:34 INF] Analyzing 1 test project(s).
+[21:20:36 INF] Found project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/src/InvoiceApp.Domain/InvoiceApp.Domain.csproj to mutate.
+[21:20:36 INF] Analysis complete.
+[21:20:36 INF] Building test project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/tests/InvoiceApp.Tests/InvoiceApp.Tests.csproj (1/1)
+[21:20:36 INF] Building project InvoiceApp.Tests.csproj using dotnet build InvoiceApp.Tests.csproj -c Debug --property:Platform=AnyCPU (directory /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/tests/InvoiceApp.Tests.)
+[21:20:40 INF] Number of tests found: 173 for project /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/mutation-worktree/backend/src/InvoiceApp.Domain/InvoiceApp.Domain.csproj. Initial test run started.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: null, at: 2026-11-01T15:50:40.5348030Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: null, role: "Director", at: 2026-11-01T15:50:40.5348060Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: null, at: 2026-11-01T15:50:40.5348050Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: " ", role: "Director", at: 2026-11-01T15:50:40.5348090Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalsControllerTests.MalformedFirstMetadata_ApprovalAndRejectFailWithoutMutation(identity: "first", role: "Admin", at: 2026-11-01T15:50:40.5348100Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: null, at: 2026-11-01T15:50:40.5362490Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: null, at: 2026-11-01T15:50:40.5362510Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: null, role: "Director", at: 2026-11-01T15:50:40.5362530Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: " ", role: "Director", at: 2026-11-01T15:50:40.5362540Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:44 WRN] Runner 1: Initial test run encounter an unexpected test case (InvoiceApp.Tests.ApprovalServiceTests.InvalidFirstMetadata_FailsClosedForApprovalAndRejection(identity: "first", role: "Admin", at: 2026-11-01T15:50:40.5362550Z)), mutation tests may be inaccurate. Disable coverage analysis if you have doubts.
+[21:20:45 INF] 135 mutants created
+Hint: by passing "--open-report or -o" the report will open automatically and
+update the report in real-time.
+[21:20:45 INF] 11    mutants got status Ignored.      Reason: Removed by block already covered filter
+[21:20:45 INF] 24    mutants got status Ignored.      Reason: Removed by mutate filter
+[21:20:45 INF] 35    total mutants are skipped for the above mentioned reasons
+[21:20:45 INF] 100   total mutants will be tested
+
+
+All mutants have been tested, and your mutation score has been calculated
+╭─────────────────────────────────────────────────────┬──┬───┬────┬─────┬───┬──╮
+│ File                                                │  │ # │ #  │  #  │ # │  │
+│                                                     │  │ … │ t… │ su… │ … │  │
+│                                                     │  │   │    │     │ … │  │
+├─────────────────────────────────────────────────────┼──┼───┼────┼─────┼───┼──┤
+│ /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc- │  │ 1 │  0 │  35 │ 0 │  │
+│ assignment/ai-sdlc-demo-app/.tools/mutation-worktre │  │ 0 │    │     │   │  │
+│ e/backend/src                                       │  │ 0 │    │     │   │  │
+│ ApprovalService.cs                                  │  │ 9 │  0 │  10 │ 0 │  │
+│                                                     │  │ 2 │    │     │   │  │
+│ DiscountCalculator.cs                               │  │ 0 │  0 │  22 │ 0 │  │
+│ IInvoiceRepository.cs                               │  │ 0 │  0 │   0 │ 0 │  │
+│ Invoice.cs                                          │  │ 0 │  0 │   2 │ 0 │  │
+│ InvoiceStatus.cs                                    │  │ 0 │  0 │   0 │ 0 │  │
+│ UsdAmount.cs                                        │  │ 8 │  0 │   1 │ 0 │  │
+╰─────────────────────────────────────────────────────┴──┴───┴────┴─────┴───┴──╯
+
+Your json report has been generated at:
+file:///Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-dem
+o-app/.tools/mutation-worktree/.tools/stryker-output/reports/mutation-report.jso
+n
+
+Your html report has been generated at:
+file:///Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-dem
+o-app/.tools/mutation-worktree/.tools/stryker-output/reports/mutation-report.htm
+l
+You can open it in your browser of choice.
+[21:22:52 INF] Time Elapsed 00:01:27.1059544
+[21:22:52 INF] The final mutation score is 100.00 %

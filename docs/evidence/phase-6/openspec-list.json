@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "name": "invoice-approval-limits",
+      "completedTasks": 18,
+      "totalTasks": 26,
+      "lastModified": "2026-11-01T15:14:42.141Z",
+      "status": "in-progress"
+    }
+  ],
+  "root": {
+    "path": "/Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app",
+    "source": "nearest"
+  }
+}

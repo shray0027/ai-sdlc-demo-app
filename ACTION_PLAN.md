@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 is complete, including participant review of the browser/strengthened tests for 437dd89. Phase 7 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -102,17 +102,17 @@ Use the application's smallest supported monetary increment for values immediate
 | Distinct second approver is not a Director | Rejected; state after the first approval remains unchanged. |
 | Any other rejected approval path introduced by this feature | Clear reason; invoice and related approval state unchanged. |
 
-- [ ] For rejection tests, compare the complete relevant state before and after the attempt, including persisted state where applicable. Check amounts, status, approver records, timestamps, and version fields that exist in the application.
-- [ ] Add one Playwright test using an invoice just above the Manager limit but at or below the Director limit. Attempt approval as a Manager through the UI, verify the rejection message, and reload/check the persisted invoice to verify it did not change.
-- [ ] Run mutation testing on the approval-rule code with the initial feature tests. Save this as the **before test-strengthening** result.
-- [ ] Inspect surviving mutants and improve meaningful assertions or missing cases. Do not add tests that merely mirror the implementation.
-- [ ] Rerun mutation testing with the same scope/configuration and unchanged production code where possible. Save this as the **after test-strengthening** result; explain any scope or code changes that affect comparability.
-- [ ] Paste both scores as text in the write-up, along with commands, commit references, mutation counts, relevant configuration, and explanations for remaining survivors or exclusions.
-- [ ] Run the unit suite and Playwright test successfully and commit the test improvements.
+- [x] For rejection tests, compare the complete relevant state before and after the attempt, including persisted state where applicable. Check amounts, status, approver records, timestamps, and version fields that exist in the application.
+- [x] Add one Playwright test using an invoice just above the Manager limit but at or below the Director limit. Attempt approval as a Manager through the UI, verify the rejection message, and reload/check the persisted invoice to verify it did not change.
+- [x] Run mutation testing on the approval-rule code with the initial feature tests. Save this as the **before test-strengthening** result.
+- [x] Inspect surviving mutants and improve meaningful assertions or missing cases. Do not add tests that merely mirror the implementation.
+- [x] Rerun mutation testing with the same scope/configuration and unchanged production code where possible. Save this as the **after test-strengthening** result; explain any scope or code changes that affect comparability.
+- [x] Paste both scores as text in the write-up, along with commands, commit references, mutation counts, relevant configuration, and explanations for remaining survivors or exclusions.
+- [x] Run the unit suite and Playwright test successfully and commit the test improvements.
 
 For a .NET 8 implementation, use the assignment's provided Stryker installation note in the requirements. Confirm runtime/tool compatibility during setup. The assignment does not specify a target mutation score; report actual results and improvements without inventing a threshold.
 
-**Exit evidence:** reviewed tests, successful UI rejection test, comparable before/after mutation reports, and recorded human validation.
+**Exit evidence:** reviewed tests, successful UI rejection test, comparable before/after mutation reports, and recorded human validation. Completed evidence: [PHASE_6.md](docs/evidence/PHASE_6.md). Playwright 1 passed; final .NET 173 and Node 46 passed. Mutation scores 100.00% → 100.00%, confirmed kills 97 → 100 and timeouts 3 → 0. Participant explicitly reviewed both additions; production/config/scope remained fixed.
 
 ## 7. Open and review the pull request
 
@@ -128,7 +128,7 @@ For a .NET 8 implementation, use the assignment's provided Stryker installation 
 
 ## 8. Prepare the write-up and demo
 
-- [ ] Create `ASSIGNMENT.md` at the application repository root.
+- [x] Create `ASSIGNMENT.md` at the application repository root. Draft contains actual feature/context/test/mutation evidence; final PR/review/video links remain Phase 8 work.
 - [ ] Explain the feature, specification decisions, context/skills/hooks, agent delegation, meaningful human interventions, and verification results.
 - [ ] Include the PR URL, specification/test/log paths, mutation scores before and after as text, remaining limitations, and the final video link.
 - [ ] Generate a readable log summary and verify the structured log against the nine suggested categories.

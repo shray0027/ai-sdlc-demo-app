@@ -39,3 +39,10 @@ Phase 3 evidence: `specification-discovery-prompt.txt`, `specification-discovery
 Stage-one prompts/results: `stage-one-implementation-prompt.txt`, `stage-one-transport-followup-prompt.txt`, `stage-one-test-review-prompt.txt`, `stage-one-test-review.md`; coordinator evidence is in `docs/evidence/PHASE_4.md`. Participant test review is requested through `docs/evidence/phase-4/TEST_REVIEW.md`; participant later replied `done`; completion is recorded without inferring individual finding verdicts.
 
 Stage-two prompts/results: `stage-two-implementation-prompt.txt`, `stage-two-test-review-prompt.txt`, `stage-two-test-review.md` and `stage-two-coordinator-review.md`. Phase 5 evidence and participant review guide are in `docs/evidence/PHASE_5.md` and `docs/evidence/phase-5/TEST_REVIEW.md`. Stage-one confirmation is not reused as stage-two test review or individual finding verdicts.
+
+
+## Phase 6 actual work
+
+`/root/phase_six_browser` implemented and ran the genuine Chromium Manager rejection test with accessible page objects, all-field reload equality and an owned server. `/root/phase_six_mutation` ran the pinned same-scope before/after experiment in an isolated worktree and delegated read-only `/root/phase_six_mutation/mutation_test_review` to assess actual reports and explanation assertions. Exact prompts and results are under `phase-six-*`, `playwright-implementation.md` and `mutation-investigation-*`; coordinator verification is in `phase-six-coordinator-review.md`. Parent/session references are in structured logs/transcripts.
+
+Actual skills: Playwright and invoice-assignment testing guidance for browser work; invoice-assignment testing/review guidance for mutation parent/child; OpenSpec apply for coordinator tracking. No workshop review is implied. Participant separately answered `Reviewed; satisfied with both additions` for test input commit 437dd89; individual finding verdicts remain unsupplied.

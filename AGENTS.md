@@ -22,7 +22,7 @@ Source: `requirements/REQUIREMENTS.md`. Follow `ACTION_PLAN.md` in phases.
 
 Both implementation stages are now present: inclusive single-approver limits plus first/second transitions above USD 500,000. A Manager or Director can give the first high-value approval while PendingApproval; only a distinct canonical username with Director role can complete it. Duplicate identity checks apply across sessions and role changes. FirstApprovedBy/FirstApprovedRole/FirstApprovedAt are nullable, populated together, preserved after completion/intentional rejection, and included in complete-state assertions. Invalid first metadata or incompatible final metadata on a pending high-value invoice fails closed. Admin has no approval bypass; baseline Approver has migrated to Manager.
 
-Participant choices and reviewed design remain in `docs/decisions/approval-policy.md` and `openspec/changes/invoice-approval-limits/`. Canonical server-session identity/role, positive numeric USD cents, exact creation transport and atomic copy-on-write transitions remain authoritative. Stage-one participant test review is complete for `5cf4d61`; stage-two participant test review is complete for `df5fa14` (explicit answer: `Reviewed; satisfied with the tests`). Browser/E2E, mutation and workshop PR review evidence are still later work.
+Participant choices and reviewed design remain in `docs/decisions/approval-policy.md` and `openspec/changes/invoice-approval-limits/`. Canonical server-session identity/role, positive numeric USD cents, exact creation transport and atomic copy-on-write transitions remain authoritative. Stage-one participant test review is complete for `5cf4d61`; stage-two participant test review is complete for `df5fa14` (explicit answer: `Reviewed; satisfied with the tests`). Phase 6 now has a passing real-browser Manager rejection/reload test and comparable Stryker 4.13.0 reports: 100.00% before (97 Killed/3 Timeout) and 100.00% after (100 Killed/0 Timeout), fixed scope/production/config. Participant confirmed satisfaction with both additions for 437dd89. Workshop PR review and demo remain later work.
 
 ## Conventions
 
@@ -40,7 +40,7 @@ Participant choices and reviewed design remain in `docs/decisions/approval-polic
 
 - Implement single-approver limits and two-approver transitions in separate delegated tasks and commits. Keep the existing language and layers.
 - Test inclusive boundaries and adjacent supported monetary values. Negative tests must compare complete state before/after, including first-approval metadata, timestamps and any version fields added. Read the stored invoice again after a rejection.
-- Include a Playwright Manager over-limit rejection with a visible reason and unchanged invoice after reload. No baseline browser tests exist yet.
+- Include a Playwright Manager over-limit rejection with a visible reason and unchanged invoice after reload. The browser regression is under `e2e/tests/manager-limit.spec.ts`; its complete-state before/after evidence is under `docs/evidence/phase-6/playwright/`.
 - Preserve comparable before/after mutation reports for approval-rule code; strengthen meaningful assertions based on survivors. No target mutation score was specified.
 - Review generated tests and the final diff. Agent review is distinct from participant judgment: the participant supplies each finding's fixed/dismissed/deferred verdict. Obtain the exact workshop review prompt before claiming workshop review.
 - Do not invent human review, test execution, hook delivery, mutation scores or demo links. Keep unresolved decisions explicit.
@@ -81,3 +81,5 @@ Setup and initial results: `docs/evidence/BASELINE.md`.
 
 - Commit real credentials, tokens or customer data.
 - Add business logic to `Program.cs` or controllers.
+
+Mutation reproduction uses the pinned local tool manifest and `stryker-config.json`; exact isolated-worktree commands and scope/counts are in `docs/evidence/phase-6/mutation/README.md`. Production code was unchanged during Phase 6.

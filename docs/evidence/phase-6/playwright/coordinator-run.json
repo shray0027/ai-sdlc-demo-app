@@ -1,0 +1,9 @@
+{
+  "production_base": "54138b503167d1e0962f7522845856a62256d3fb",
+  "browser_test_passed": true,
+  "owned_endpoint": "http://127.0.0.1:51525",
+  "owned_endpoint_closed": true,
+  "all_fields_unchanged": 11,
+  "http_status": 409,
+  "full_output": "docs/evidence/phase-6/final-checks.txt"
+}

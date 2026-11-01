@@ -55,3 +55,19 @@ AGENTS.md                 conventions for AI coding agents
 
 - [UC-1 Bulk invoice approval](docs/use-cases/UC-1-bulk-approval.md)
 - [UC-2 Partial approval](docs/use-cases/UC-2-partial-approval.md)
+
+
+## Browser regression and mutation evidence
+
+With Node 24 and .NET 8 selected, run the real browser rejection check:
+
+```sh
+npm ci --prefix e2e
+cd e2e
+npx playwright install chromium
+npm test
+```
+
+The test starts and stops its own loopback server, creates a unique synthetic invoice and verifies all persisted fields after a Manager rejection and reload. It does not reuse port 5000. Optional `INVOICE_E2E_PORT` selects a dedicated free port; an existing listener causes failure rather than reuse.
+
+Stryker.NET is pinned to 4.13.0 in the local tool manifest. `dotnet tool restore` restores it. The comparable mutation runs and exact isolated-worktree commands are in [mutation evidence](docs/evidence/phase-6/mutation/README.md). BEFORE and AFTER scores are both **100.00%**; confirmed kills increased from **97 to 100**, while timeouts decreased from **3 to 0**. No numerical score increase is claimed.

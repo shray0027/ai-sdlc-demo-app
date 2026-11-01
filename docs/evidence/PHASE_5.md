@@ -1,6 +1,6 @@
 # Phase 5 — two distinct approvers
 
-Status: technical implementation and independent agent review complete; participant stage-two test review remains pending under task 3.8. The preceding stage-one implementation is commit `5cf4d61`, with participant confirmation recorded in `e869ce4`. This evidence is committed alongside the separate stage-two implementation; source/test hashes identify the exact checked files.
+Status: complete, including explicit participant satisfaction with stage-two tests. The implementation revision is `df5fa1427501266bbcd7e91cfe35279cbaed458b`. The preceding stage-one implementation is commit `5cf4d61`, with participant confirmation recorded in `e869ce4`. This evidence is committed alongside the separate stage-two implementation; source/test hashes identify the exact checked files.
 
 ## Behavior and integration
 
@@ -48,3 +48,7 @@ Apply started ready at 10/26 complete. Delegation and tasks 3.2–3.7 are now ch
 [Stage-two test-review guide](phase-5/TEST_REVIEW.md) links the concrete new tests and retained regressions. An assessment question was sent after those tests existed. No answer is inferred; the earlier `done` applies to stage-one review only.
 
 Next is Phase 6: Playwright rejection coverage and comparable before/after mutation evidence. Workshop prompt, individual participant finding verdicts, PR publication, write-up and demo remain pending. Persistence remains local in-memory; very large returned values may be displayed approximately by JavaScript formatting, while creation and stored approval values remain exact decimals.
+
+## Participant test-review confirmation
+
+On 1 November 2026 the participant explicitly answered `Reviewed; satisfied with the tests` to the stage-two review question. This completes task 3.8 for commit `df5fa14`, with no changes requested. The earlier pending descriptions above record the implementation-time state; current progress is 18/26, captured in `phase-5/participant-review-progress.json`. No new test execution or separate human finding verdict is inferred.

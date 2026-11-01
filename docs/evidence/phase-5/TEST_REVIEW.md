@@ -1,6 +1,6 @@
 # Stage-two generated-test review
 
-Participant review status: pending. Stage-one review completion applies to commit `5cf4d61`; it is not reused as approval of these new tests.
+Participant review status: complete. On 1 November 2026, the participant explicitly answered `Reviewed; satisfied with the tests` for stage-two implementation commit `df5fa14`. This is a separate review from stage one; no changes were requested.
 
 Implementation checks: **171 .NET tests** and **46 Node tests** passed. The independent child inspected new coverage and rechecked its one reported gap. This guide links the current tests for the participant's actual review.
 
@@ -18,4 +18,4 @@ Only four Domain and two API temporary unavailable-workflow rows were superseded
 
 The Node checks are JavaScript unit checks, not Playwright or a real-browser execution. Mutation testing and the workshop PR review are later work.
 
-OpenSpec task 3.8 requires the participant's actual generated-test review separately. Please inspect these cases and report completion or requested changes. Agent handling of ST2-T01 does not supply a human finding verdict.
+OpenSpec task 3.8 is complete. Exact participant answer: `Reviewed; satisfied with the tests`. This confirms the generated-test review; it does not supply a separate finding verdict for ST2-T01 or replace the workshop PR review.

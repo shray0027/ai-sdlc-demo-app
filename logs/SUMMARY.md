@@ -209,12 +209,23 @@ Exact recheck prompt:
 ST2-T01 fix ready for read-only recheck: populated-first Domain HighValueHistory_OtherFailedBranchesPreservePopulatedFirstFields and API ActorOrAmountDenials_PreservePopulatedFirstHistory now cover Admin/legacy/unknown roles, blank identity, invalid high precision and zero amounts with fresh complete state comparisons. API terminal-history test now covers Draft/Approved/Rejected. Creation tests also explicitly assert all three new camelCase JSON fields initially null. Please recheck the current diff and return your exact final review with finding ST2-T01, technical resolution status, actual test commands/results and remaining limitations. Participant verdict remains pending.
 ```
 
+## phase-5-participant-review
+
+- Capture: agent-authored record of explicit participant response, linked to automatic transcript export
+- Outcome: Phase 5 complete; Phase 6 pending
+
+Request:
+
+```text
+Reviewed; satisfied with the tests
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 354 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 363 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.

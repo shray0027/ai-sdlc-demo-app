@@ -39,7 +39,7 @@ Checkboxes reflect actual implementation and verification evidence. Future brows
 
 ## 5. Final integration and review handoff
 
-- [ ] 5.1 Verify all named scenarios below are linked to actual tests/evidence, run strict OpenSpec validation and final regression commands against the submitted code, and record unresolved limitations without claiming unexecuted checks.
+- [x] 5.1 Verify all named scenarios below are linked to actual tests/evidence, run strict OpenSpec validation and final regression commands against the submitted code, and record unresolved limitations without claiming unexecuted checks.
 - [ ] 5.2 Obtain the exact workshop review prompt, run the independent diff review, assign finding IDs and obtain the participant's fixed/dismissed/deferred verdict with reasons for every finding; verify fixes with affected tests and preserve evidence. Keep human review pending until supplied.
 - [ ] 5.3 Verify the PR/write-up evidence links the separate implementation commits, participant choices versus agent-selected design, generated-test judgments, UI result, matching mutation reports and actual review findings/verdicts. Deliver artifact links and remaining process requirements to the coordinator without fabricating PR/demo/human-review completion.
 

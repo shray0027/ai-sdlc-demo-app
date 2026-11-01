@@ -1,10 +1,10 @@
 # AI in SDLC assignment — invoice approval limits
 
-Status: both implementation stages and Phase 6 technical verification are complete. Participant reviews of stage-one/stage-two tests and Phase 6 browser/strengthened tests are recorded. PR workshop review and the demo remain unfinished.
+Status: both implementation stages and Phase 6 technical verification are complete. Participant reviews of stage-one/stage-two tests and Phase 6 browser/strengthened tests are recorded. Draft PR #1 is open; workshop review and the demo remain unfinished.
 
 - Fork: https://github.com/shray0027/ai-sdlc-demo-app
 - Branch: `assignment/invoice-approval-limits`
-- PR URL: not created yet (Phase 7).
+- Draft PR: https://github.com/shray0027/ai-sdlc-demo-app/pull/1 (Phase 7; exact workshop review and participant finding verdicts pending).
 - Demo video: not recorded/uploaded yet; an accessible 8–10-minute MP4 link is still required.
 
 ## Feature and decisions
@@ -61,7 +61,7 @@ Agent findings led to concrete fixes: exact JSON and browser-input rounding prot
 | Two-person stage | 171 .NET and 46 Node cases passed |
 | Phase 6 final | **173 Release .NET**, **46 Node**, **1 Chromium Playwright test** passed; Release build zero warnings/errors |
 
-[Final commands/output](docs/evidence/phase-6/final-checks.txt) and [Phase 6 evidence](docs/evidence/PHASE_6.md) identify exact inputs. Local checks include the commands wired into CI; remote CI execution is not claimed.
+[Final commands/output](docs/evidence/phase-6/final-checks.txt) and [Phase 6 evidence](docs/evidence/PHASE_6.md) identify exact inputs. Local checks include the commands wired into CI. Phase 7 remote GitHub CI also passed on initial PR head `0b91c4a`; [check metadata](docs/evidence/phase-7/ci-initial-head.json) preserves the exact revision.
 
 The [browser test](e2e/tests/manager-limit.spec.ts) signs in as Manager, creates/submits a unique USD 50,000.01 invoice through UI, observes the exact limit reason/409, reloads and compares all 11 persisted fields via fresh authenticated HTTP. It uses role/label page objects and an owned loopback server. [Browser evidence](docs/evidence/phase-6/playwright/README.md) preserves initial synchronization failure, successful runs and server teardown. No image, video, bearer token or network trace is submitted.
 
@@ -93,4 +93,4 @@ dotnet stryker --config-file stryker-config.json --output .tools/stryker-output 
 
 ## Remaining submission work
 
-The exact workshop review prompt, PR creation/review, every finding's participant verdict, final write-up/links and an uploaded accessible 8–10-minute MP4 remain pending. The video must show live execution; reading these files alone is insufficient. [ACTION_PLAN.md](ACTION_PLAN.md) tracks remaining work. This write-up is a current evidence record, not a claim that the assignment is already submitted or complete.
+The exact workshop review prompt/review, every finding's participant verdict, final write-up/links and an uploaded accessible 8–10-minute MP4 remain pending. [Draft PR #1](https://github.com/shray0027/ai-sdlc-demo-app/pull/1) preserves the separate implementation commits. [Phase 7 evidence](docs/evidence/PHASE_7.md) maps all 27 scenarios to tests and records the finding ledger; task 5.1 is complete, while 5.2/5.3 remain open. The video must show live execution; reading these files alone is insufficient. [ACTION_PLAN.md](ACTION_PLAN.md) tracks remaining work. This write-up is a current evidence record, not a claim that the assignment is already submitted or complete.

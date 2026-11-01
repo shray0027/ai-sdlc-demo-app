@@ -1,0 +1,9 @@
+{
+  "task": "5.1",
+  "exact_line_before": "- [ ] 5.1 Verify all named scenarios below are linked to actual tests/evidence, run strict OpenSpec validation and final regression commands against the submitted code, and record unresolved limitations without claiming unexecuted checks.",
+  "evidence": [
+    "ACCEPTANCE_MAP.md",
+    "final-checks.txt"
+  ],
+  "input_commit": "0b91c4acc18a641be463b8803b0eee4d78c4d7f3"
+}

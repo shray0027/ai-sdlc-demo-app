@@ -17,3 +17,7 @@ playwright-report/
 requirements/*.jpeg
 requirements/*.jpg
 requirements/*.png
+
+# Python logger/skill validation caches
+__pycache__/
+*.pyc

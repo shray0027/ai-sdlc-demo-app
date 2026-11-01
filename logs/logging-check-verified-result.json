@@ -1,0 +1,17 @@
+{
+  "session_id": "01a19646-aee5-7b20-b9e6-bf94cb0a91f9",
+  "required_events": [
+    "PostToolUse",
+    "SessionStart",
+    "Stop",
+    "UserPromptSubmit"
+  ],
+  "delivered_events": [
+    "PostToolUse",
+    "SessionStart",
+    "Stop",
+    "UserPromptSubmit"
+  ],
+  "passed": true,
+  "note": "No child agents requested; SubagentStart/Stop configured but not exercised."
+}

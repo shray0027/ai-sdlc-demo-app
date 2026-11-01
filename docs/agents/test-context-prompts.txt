@@ -1,0 +1,5 @@
+Initial prompt:
+Work read-only in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app. Read AGENTS.md and .agents/skills/invoice-assignment/SKILL.md in testing/context-check scope. Inspect current unit and end-to-end tests and identify acceptance-test gaps for FR-01 through FR-05, especially duplicate approvers (including Director twice) and complete unchanged stored state after rejected attempts. Distinguish existing assertions from required coverage. Report relevant paths, actual tools/skills used, and whether you ran tests. Do not edit files, implement, commit, log writes, or make participant specification decisions. Return your findings verbatim for the coordinator's evidence log.
+
+Follow-up prompt:
+Please include complete result text in your final response, since I will quote it verbatim with your task identifier. No tests need to run for this read-only context review.

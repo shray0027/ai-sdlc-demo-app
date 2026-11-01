@@ -1,0 +1,3 @@
+# Repository-local hook feature. No model, account, or permission overrides.
+[features]
+hooks = true

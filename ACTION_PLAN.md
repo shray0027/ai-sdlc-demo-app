@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phase 1 is complete; subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1 and 2 are complete; subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -19,12 +19,12 @@ The application is checked out in `ai-sdlc-demo-app/` from the participant fork,
 
 Start capturing interactions as early as tooling permits. Preserve available transcripts for earlier planning/setup work, and label any reconstructed entries rather than presenting them as automatic captures.
 
-- [ ] Extend `AGENTS.md` with all five approval rules, architecture boundaries, test commands, and review expectations.
-- [ ] Select appropriate skills for specification, implementation, testing, and review based on the chosen environment; record which are actually invoked.
-- [ ] Configure supported hooks to capture interactions in a consistent format. Prefer JSONL plus a readable summary.
-- [ ] Verify the logging setup with one real interaction before implementation starts.
-- [ ] Use multiple agents and sub-agents with concrete responsibilities, as outlined below.
-- [ ] Give a fresh agent the repository context and ask it to explain the rules, relevant layers, test command, and planned change locations. Preserve the response as evidence that `AGENTS.md` is useful.
+- [x] Extend `AGENTS.md` with all five approval rules, architecture boundaries, test commands, and review expectations.
+- [x] Select appropriate skills for specification, implementation, testing, and review based on the chosen environment; record which are actually invoked.
+- [x] Configure supported hooks to capture interactions in a consistent format. Prefer JSONL plus a readable summary.
+- [x] Verify the logging setup with one real interaction before implementation starts.
+- [x] Use multiple agents and sub-agents with concrete responsibilities, as outlined below.
+- [x] Give a fresh agent the repository context and ask it to explain the rules, relevant layers, test command, and planned change locations. Preserve the response as evidence that `AGENTS.md` is useful.
 
 | Responsibility | Work and evidence |
 | --- | --- |
@@ -39,7 +39,7 @@ These are responsibilities rather than a requirement for five simultaneously run
 
 The log should capture the nine categories from the requirements: tool/model; agent/type/mode; exact prompts and follow-ups; skills/custom instructions/sub-agents; tools/integrations; actions/outputs; human intervention; timestamps/files/test results/session and commit references; and outcomes. Use related interaction IDs and parent task references for delegation. Record only capabilities and human decisions that actually occurred.
 
-**Exit evidence:** updated context, agent definitions or task records, functioning logging hooks, a real sample log entry, and a fresh-agent context check.
+**Exit evidence:** updated context, agent definitions or task records, functioning logging hooks, a real sample log entry, and a fresh-agent context check. Completed evidence: [PHASE_2.md](docs/evidence/PHASE_2.md). Native CLI hooks verified using inline configuration; existing IDE/project-file delivery remains unverified and uses explicit transcript export.
 
 ## 3. Generate and review the specification
 

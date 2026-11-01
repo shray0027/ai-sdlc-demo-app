@@ -1,0 +1,8 @@
+test_redacts_nested_credentials_and_text_tokens (test_interaction_log.InteractionLogTests.test_redacts_nested_credentials_and_text_tokens) ... ok
+test_refuses_transcript_for_unrelated_workspace (test_interaction_log.InteractionLogTests.test_refuses_transcript_for_unrelated_workspace) ... ok
+test_sync_omits_internal_content_and_retries_partial_tail_without_duplicates (test_interaction_log.InteractionLogTests.test_sync_omits_internal_content_and_retries_partial_tail_without_duplicates) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK

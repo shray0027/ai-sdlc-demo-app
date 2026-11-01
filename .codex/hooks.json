@@ -1,0 +1,11 @@
+{
+  "description": "Assignment audit capture; writes only local logs, with no approval or continuation decisions.",
+  "hooks": {
+    "SessionStart": [{"hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}],
+    "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}],
+    "PostToolUse": [{"matcher": ".*", "hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}],
+    "SubagentStart": [{"matcher": ".*", "hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}],
+    "SubagentStop": [{"matcher": ".*", "hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "python3 \"$(git rev-parse --show-toplevel)/scripts/interaction_log.py\" hook", "timeout": 30}]}]
+  }
+}

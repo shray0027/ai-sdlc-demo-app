@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1 and 2 are complete; subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–3 are complete; implementation and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -43,10 +43,10 @@ The log should capture the nine categories from the requirements: tool/model; ag
 
 ## 3. Generate and review the specification
 
-- [ ] Select one of the assignment's spec-driven tools: Spec Kit, OpenSpec, or BMAD. Check its supported workflow during execution.
-- [ ] Generate the specification and task breakdown through that tool; preserve and commit its generated files.
-- [ ] Map FR-01 through FR-05 to acceptance criteria and planned tests.
-- [ ] Resolve the details below before implementing behavior that depends on them. Consult existing repository behavior first and record any remaining assumptions explicitly for participant review.
+- [x] Select one of the assignment's spec-driven tools: Spec Kit, OpenSpec, or BMAD. Check its supported workflow during execution. Selected OpenSpec 1.16.0; initialized Codex integration and completed CLI-guided generation after participant answers.
+- [x] Generate the specification and task breakdown through that tool; preserve and commit its generated files.
+- [x] Map FR-01 through FR-05 to acceptance criteria and planned tests.
+- [x] Resolve the details below before implementing behavior that depends on them. Consult existing repository behavior first and record any remaining assumptions explicitly for participant review.
 
 | Question | Decision required |
 | --- | --- |
@@ -56,7 +56,7 @@ The log should capture the nine categories from the requirements: tool/model; ag
 | User identity | Which stable user identifier establishes that two approvers are distinct. |
 | Rejected attempt | Which invoice fields and related approval records must remain unchanged. |
 
-**Exit evidence:** reviewed specification and tasks, explicit decisions, and acceptance criteria that preserve all five rules.
+**Exit evidence:** reviewed specification and tasks, explicit decisions, and acceptance criteria that preserve all five rules. Completed evidence: [PHASE_3.md](docs/evidence/PHASE_3.md). OpenSpec strict validation passed, all four planning artifacts complete, and SPEC-01 clarified/rechecked. Implementation remains pending.
 
 ## 4. Implement stage one: single-approver limits
 

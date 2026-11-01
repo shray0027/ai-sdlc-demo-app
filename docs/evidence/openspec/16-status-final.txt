@@ -1,0 +1,13 @@
+- Loading change status...
+Change: invoice-approval-limits
+Schema: spec-driven
+Change root: /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/openspec/changes/invoice-approval-limits
+Progress: 4/4 artifacts complete
+
+[x] proposal
+[x] specs
+[x] design
+[x] tasks
+
+All planning artifacts complete!
+Next: openspec instructions apply --change "invoice-approval-limits" --json

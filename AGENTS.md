@@ -20,7 +20,7 @@ Source: `requirements/REQUIREMENTS.md`. Follow `ACTION_PLAN.md` in phases.
 - **FR-04:** One user must never count as both approvers, including a Director approving twice.
 - **FR-05:** Every rejected approval attempt must give a clear reason and leave the entire invoice and its approval records unchanged.
 
-Do not assume Admin bypasses these rules. The current Approver/Admin roles are baseline behavior, not a specification decision about Manager/Director. Phase 3 must resolve the eligible first approver above 500,000, role migration, amount precision/currency, stable identity, and pending-first-approval representation before dependent implementation.
+Do not assume Admin bypasses these rules. The current Approver/Admin roles are baseline behavior. Phase 3 decisions are recorded in `docs/decisions/approval-policy.md` and the reviewed draft at `openspec/changes/invoice-approval-limits/`. The participant chose Manager or Director for the high-value first approval and positive USD values with at most two decimal places. Agent-selected design uses canonical authenticated username identity, separate first-approval metadata while PendingApproval, Manager/Director approval roles without an Admin bypass, and atomic copy-on-write repository transitions. These are specification decisions; implementation remains pending.
 
 ## Conventions
 

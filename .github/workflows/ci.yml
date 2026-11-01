@@ -20,3 +20,9 @@ jobs:
       - run: node --test backend/tests/ui/*.test.cjs
       - run: dotnet build backend/InvoiceApp.sln --configuration Release
       - run: dotnet test backend/InvoiceApp.sln --configuration Release --no-build
+      - run: npm ci
+        working-directory: e2e
+      - run: npx playwright install --with-deps chromium
+        working-directory: e2e
+      - run: npm test
+        working-directory: e2e

@@ -21,12 +21,21 @@ public class ApprovalServiceTests
         Assert.Equal(InvoiceStatus.PendingApproval, result.Status);
     }
 
-    [Fact]
-    public void Submit_RejectsInvoiceThatIsNotADraft()
+    [Theory]
+    [InlineData(InvoiceStatus.PendingApproval)]
+    [InlineData(InvoiceStatus.Approved)]
+    [InlineData(InvoiceStatus.Rejected)]
+    public void Submit_NonDraftExplainsFailureAndPreservesCompleteStoredState(InvoiceStatus status)
     {
-        var service = ServiceFor(InvoiceWith("INV-1", InvoiceStatus.Approved));
+        var invoice = InvoiceState.Pending();
+        invoice.Status = status;
+        var repo = new FakeInvoiceRepository(invoice);
+        var before = InvoiceState.Snapshot(repo.GetById(invoice.Id));
 
-        Assert.Throws<InvalidOperationException>(() => service.Submit("INV-1"));
+        var error = Assert.Throws<InvalidOperationException>(() => new ApprovalService(repo).Submit(invoice.Id));
+
+        Assert.Contains("only drafts can be submitted", error.Message);
+        Assert.Equal(before, InvoiceState.Snapshot(repo.GetById(invoice.Id)));
     }
 
     [Fact]
@@ -71,9 +80,14 @@ public class ApprovalServiceTests
     [Fact]
     public void Reject_RequiresAReason()
     {
-        var service = ServiceFor(InvoiceWith("INV-1", InvoiceStatus.PendingApproval));
+        var invoice = InvoiceState.Pending();
+        var repo = new FakeInvoiceRepository(invoice);
+        var before = InvoiceState.Snapshot(repo.GetById(invoice.Id));
 
-        Assert.Throws<ArgumentException>(() => service.Reject("INV-1", "demo.approver", "Manager", "  "));
+        var error = Assert.Throws<ArgumentException>(() => new ApprovalService(repo).Reject(invoice.Id, "demo.approver", "Manager", "  "));
+
+        Assert.Contains("reason is required", error.Message);
+        Assert.Equal(before, InvoiceState.Snapshot(repo.GetById(invoice.Id)));
     }
 
     [Theory]
@@ -107,7 +121,7 @@ public class ApprovalServiceTests
         foreach (var role in new[] { "Admin", "Approver", "unknown", "", "manager" })
             yield return new object[] { 100m, InvoiceStatus.PendingApproval, "actor", role, typeof(UnauthorizedAccessException), "Managers and Directors" };
         foreach (var identity in new[] { "", "  " })
-            yield return new object[] { 100m, InvoiceStatus.PendingApproval, identity, "Manager", typeof(ArgumentException), "identity" };
+            yield return new object[] { 100m, InvoiceStatus.PendingApproval, identity, "Manager", typeof(ArgumentException), "authenticated approver identity is required" };
         foreach (var status in new[] { InvoiceStatus.Draft, InvoiceStatus.Approved, InvoiceStatus.Rejected })
             yield return new object[] { 100m, status, "actor", "Director", typeof(InvalidOperationException), "pending" };
         foreach (var amount in new[] { 0m, -0.01m, 0.001m, 50000.001m, 500000.001m })

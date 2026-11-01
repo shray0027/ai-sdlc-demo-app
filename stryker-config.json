@@ -1,0 +1,28 @@
+{
+  "stryker-config": {
+    "project": "InvoiceApp.Domain.csproj",
+    "test-projects": [
+      "backend/tests/InvoiceApp.Tests/InvoiceApp.Tests.csproj"
+    ],
+    "mutate": [
+      "**/ApprovalService.cs",
+      "**/UsdAmount.cs"
+    ],
+    "mutation-level": "Standard",
+    "configuration": "Debug",
+    "test-runner": "vstest",
+    "concurrency": 2,
+    "reporters": [
+      "Json",
+      "ClearText",
+      "Html"
+    ],
+    "break-on-initial-test-failure": true,
+    "thresholds": {
+      "high": 80,
+      "low": 60,
+      "break": 0
+    },
+    "coverage-analysis": "off"
+  }
+}

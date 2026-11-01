@@ -291,12 +291,35 @@ Request:
 continue
 ```
 
+## phase-7-workshop-review
+
+- Capture: agent-authored metadata linked to explicitly selected saved transcript exports
+- Outcome: No actionable new findings; no browser/mutation rerun, new defect IDs, source edits or commits. Scoped review, not proof all faults absent.
+
+Request:
+
+```text
+review this PR against our checklist . Report findings by severity with file and line. suggest a fix for each, and say what you are unsure about.
+```
+
+## phase-7-review-completion
+
+- Capture: agent-authored metadata linked to explicitly selected saved transcript exports
+- Outcome: Phase 7 review complete: no new findings, all earlier nine participant verdicts Fixed. Demo/final submission remains Phase 8.
+
+Request:
+
+```text
+Exact workshop prompt: review this PR against our checklist . Report findings by severity with file and line. suggest a fix for each, and say what you are unsure about.
+Earlier finding verdicts: Reviewed all nine; mark each Fixed
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 470 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 516 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.
@@ -312,5 +335,6 @@ Native lifecycle events recorded: 5.
 - [01a197c8-f8e3-7583-881e-5812155098f5](transcripts/01a197c8-f8e3-7583-881e-5812155098f5.jsonl): 40 selected records.
 - [01a197c9-249c-7640-a286-eef5e27763cd](transcripts/01a197c9-249c-7640-a286-eef5e27763cd.jsonl): 104 selected records.
 - [01a197cc-ea34-7b91-ac79-745d1e88457a](transcripts/01a197cc-ea34-7b91-ac79-745d1e88457a.jsonl): 64 selected records.
+- [01a197f5-2c96-7f21-a892-adf6caa94177](transcripts/01a197f5-2c96-7f21-a892-adf6caa94177.jsonl): 34 selected records.
 
 Coverage, redaction and activation limits are described in [README.md](README.md).

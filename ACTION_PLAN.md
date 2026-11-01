@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 is complete, including participant review of the browser/strengthened tests for 437dd89. Phase 7 is in progress: draft PR #1 is open; exact workshop prompt and participant finding verdicts are pending. Subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 is complete, including explicit participant satisfaction with the stage-two tests for `df5fa14`. Phase 6 is complete, including participant review of the browser/strengthened tests for 437dd89. Phase 7 is complete: PR #1 is open, the exact workshop prompt was independently applied with no actionable new findings, and all nine earlier findings are participant-confirmed Fixed. Phase 8 final demo/submission remains pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -117,14 +117,14 @@ For a .NET 8 implementation, use the assignment's provided Stryker installation 
 ## 7. Open and review the pull request
 
 - [x] Push the assignment branch and open a pull request on the participant's fork. Draft: https://github.com/shray0027/ai-sdlc-demo-app/pull/1.
-- [ ] Obtain the exact workshop review prompt from workshop materials and run it against the PR diff. If it is unavailable, record that gap and obtain it before claiming this requirement is satisfied.
-- [ ] Save the agent's review and give each finding an identifier.
-- [ ] Have the participant judge each finding: **fixed**, **dismissed with a reason**, or **deferred with a reason**.
-- [ ] Apply fixes, rerun the affected checks, and update the review record to reflect the final diff.
-- [ ] Put every finding and its verdict in the PR description, with evidence or a reason.
+- [x] Run the exact supplied workshop prompt against PR diff `66cb3f9..8bc6966`; preserve prompt, delegation and independent report in `docs/agents/workshop-review*`.
+- [x] Save the agent's review and give each finding an identifier.
+- [x] Have the participant judge each finding: **fixed**, **dismissed with a reason**, or **deferred with a reason**.
+- [x] Apply fixes, rerun the affected checks, and update the review record to reflect the final diff.
+- [x] Put every finding and its verdict in the PR description, with evidence or a reason.
 - [x] Confirm the PR contains at least three commits that stand on their own. Nine original incremental commits are preserved, including `5cf4d61` and `df5fa14`; Phase 7 evidence adds a documentation commit.
 
-**Exit evidence:** PR URL, captured review prompt/output, complete finding dispositions, and passing checks for the final code.
+**Exit evidence:** [PR #1](https://github.com/shray0027/ai-sdlc-demo-app/pull/1), [Phase 7 evidence](docs/evidence/PHASE_7.md), exact prompt/report, all nine participant Fixed verdicts, no new actionable findings, passing final local and remote CI checks. Production/test input hashes unchanged; no fixes required from this review. Merge not performed.
 
 ## 8. Prepare the write-up and demo
 

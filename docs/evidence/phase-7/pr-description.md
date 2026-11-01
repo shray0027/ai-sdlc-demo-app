@@ -8,28 +8,28 @@ Managers can approve invoices through USD 50,000 and Directors through USD 500,0
 
 ## Verification
 
-Final local checks on `0b91c4a`: Release build has zero warnings/errors; 173 .NET tests, 46 JavaScript tests and one Chromium test pass. Strict OpenSpec validation passes. Remote GitHub CI passed on this initial head; check metadata is preserved in `docs/evidence/phase-7/ci-initial-head.json`.
+Final local checks on `0b91c4a`: Release build has zero warnings/errors; 173 .NET tests, 46 JavaScript tests and one Chromium test pass. Strict OpenSpec validation passes. Remote GitHub CI passed on initial head `0b91c4a` and review head `8bc6966`; exact check metadata is preserved in `docs/evidence/phase-7/`.
 
 Mutation: before **100.00%** (97 Killed, 3 Timeout); after **100.00%** (100 Killed, 0 Timeout). Both have 135 generated/100 active/35 ignored and zero survivors/no-coverage. Production, scope, configuration and mutant fingerprints match; no numerical score increase is claimed. Raw reports and precise revision references are in `docs/evidence/phase-6/mutation/`.
 
 ## Review findings and participant verdicts
 
-Draft: the exact workshop review prompt has been requested and has not yet been supplied. No workshop review or participant finding verdict is claimed. Earlier test-satisfaction replies do not stand in for finding dispositions.
+The participant supplied the exact workshop prompt, preserved in `docs/agents/workshop-review-prompt.txt`, and explicitly answered `Reviewed all nine; mark each Fixed` for all nine earlier findings below. An independent review of base `66cb3f9` to head `8bc6966` applied that prompt and reported **no actionable new findings**. See `docs/agents/workshop-review.md` for rule tracing, actual checks and uncertainties. Subsequent changes contain review evidence/tracking only; all 47 tested code/config hashes still match.
 
 | Finding | Agent handling/evidence | Participant verdict |
 | --- | --- | --- |
-| SPEC-01: distinguish temporary stage-one high-value tests from final stage-two expectations | Clarified/rechecked; `docs/agents/specification-review-dispositions.md` | Pending |
-| S1-TR-01: reject JSON amounts before decimal conversion can round them | Exact converter and API regressions; `docs/agents/stage-one-test-review.md` | Pending |
-| S1-TR-02: use an independent expected state for successful repository mutation | Complete independent oracle and recheck; same report | Pending |
-| S1-TR-03: verify complete stable race responses | Full expected state/detached response assertions and recheck; same report | Pending |
-| S1-C-01: preserve numeric form input before browser rounding | Lexical JSON-number transport and 42 focused Node regressions; `docs/agents/stage-one-coordinator-review.md` | Pending |
-| ST2-T01: assert populated first-history preservation on actor/amount/terminal denials | Additional Domain/API matrices; `docs/agents/stage-two-test-review.md` | Pending |
-| MI-01: non-draft submission explanation | Useful reason/full state across three statuses; `docs/agents/mutation-investigation-result.md` | Pending |
-| MI-02: blank rejection-reason explanation | Useful explanation/full unchanged state; same report | Pending |
-| MI-03: authenticated identity explanation | Meaningful wording rather than parameter suffix; same report | Pending |
+| SPEC-01: distinguish temporary stage-one high-value tests from final stage-two expectations | Clarified/rechecked; `docs/agents/specification-review-dispositions.md` | **Fixed** |
+| S1-TR-01: reject JSON amounts before decimal conversion can round them | Exact converter and API regressions; `docs/agents/stage-one-test-review.md` | **Fixed** |
+| S1-TR-02: use an independent expected state for successful repository mutation | Complete independent oracle and recheck; same report | **Fixed** |
+| S1-TR-03: verify complete stable race responses | Full expected state/detached response assertions and recheck; same report | **Fixed** |
+| S1-C-01: preserve numeric form input before browser rounding | Lexical JSON-number transport and 42 focused Node regressions; `docs/agents/stage-one-coordinator-review.md` | **Fixed** |
+| ST2-T01: assert populated first-history preservation on actor/amount/terminal denials | Additional Domain/API matrices; `docs/agents/stage-two-test-review.md` | **Fixed** |
+| MI-01: non-draft submission explanation | Useful reason/full state across three statuses; `docs/agents/mutation-investigation-result.md` | **Fixed** |
+| MI-02: blank rejection-reason explanation | Useful explanation/full unchanged state; same report | **Fixed** |
+| MI-03: authenticated identity explanation | Meaningful wording rather than parameter suffix; same report | **Fixed** |
 
-All newly reported workshop findings will be added with participant **Fixed**, **Dismissed with reason**, or **Deferred with reason** verdicts before review completion.
+Every actual earlier finding now has the participant's **Fixed** verdict above. No new workshop findings or extra human approvals were invented. The reviewer independently passed 173 .NET, 46 Node and 3 logger tests; inspected matching mutation reports/browser snapshots; did not rerun Playwright or mutation testing. Review is bounded to the named revision and does not prove all faults absent.
 
 ## Evidence and remaining submission work
 
-`ASSIGNMENT.md` links specifications, actual human choices/test-review replies, agent prompts/results, interaction logs, browser evidence, and comparable mutation reports. Source images are excluded. The application uses in-memory storage, so restart persistence is outside this demo. The exact workshop review, participant finding dispositions, and uploaded 8–10-minute demo remain pending.
+`ASSIGNMENT.md` links specifications, actual human choices/test-review replies, agent prompts/results, interaction logs, browser evidence, and comparable mutation reports. Source images are excluded. The application uses in-memory storage, so restart persistence is outside this demo. The workshop review and all nine participant verdicts are complete. The final submission write-up/video handoff and uploaded 8–10-minute demo remain pending; no merge or full submission completion is claimed.

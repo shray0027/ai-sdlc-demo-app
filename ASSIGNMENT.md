@@ -1,10 +1,10 @@
 # AI in SDLC assignment — invoice approval limits
 
-Status: both implementation stages and Phase 6 technical verification are complete. Participant reviews of stage-one/stage-two tests and Phase 6 browser/strengthened tests are recorded. Draft PR #1 is open; workshop review and the demo remain unfinished.
+Status: both implementation stages and Phase 6 technical verification are complete. Participant reviews of stage-one/stage-two tests and Phase 6 browser/strengthened tests are recorded. PR #1 has completed the workshop agent review with no actionable new findings; all nine earlier findings have explicit participant Fixed verdicts. The uploaded demo and final submission handoff remain unfinished.
 
 - Fork: https://github.com/shray0027/ai-sdlc-demo-app
 - Branch: `assignment/invoice-approval-limits`
-- Draft PR: https://github.com/shray0027/ai-sdlc-demo-app/pull/1 (Phase 7; exact workshop review and participant finding verdicts pending).
+- PR: https://github.com/shray0027/ai-sdlc-demo-app/pull/1 (Phase 7 review complete; merge not performed).
 - Demo video: not recorded/uploaded yet; an accessible 8–10-minute MP4 link is still required.
 
 ## Feature and decisions
@@ -50,7 +50,7 @@ The log evidence covers the nine suggested categories: tool/model; agent/type/mo
 - Stage-two review was explicitly confirmed: `Reviewed; satisfied with the tests` for `df5fa14`.
 - Phase 6 review for `437dd89` was explicitly confirmed: `Reviewed; satisfied with both additions`. This is its own review, not reused from earlier confirmations.
 
-Agent findings led to concrete fixes: exact JSON and browser-input rounding protection; independent expected-state oracles; complete race response assertions; explicit transition-test replacement; and populated-first-history denial coverage. Phase 6 review identified meaningful error-explanation assertions even though no mutant survived. Agent handling/rechecks are preserved; individual participant finding verdicts and the exact workshop PR review remain pending. No human judgment is fabricated from an agent conclusion.
+Agent findings led to concrete fixes: exact JSON and browser-input rounding protection; independent expected-state oracles; complete race response assertions; explicit transition-test replacement; and populated-first-history denial coverage. Phase 6 review identified meaningful error-explanation assertions even though no mutant survived. The participant explicitly answered `Reviewed all nine; mark each Fixed` for SPEC-01, S1-TR-01/02/03, S1-C-01, ST2-T01 and MI-01/02/03. [Per-finding verdicts](docs/evidence/phase-7/FINDINGS.md) and [exact acknowledgment](docs/evidence/phase-7/participant-earlier-findings.json) preserve that decision. The [independent workshop report](docs/agents/workshop-review.md) applies the participant's [exact prompt](docs/agents/workshop-review-prompt.txt) to `66cb3f9..8bc6966` and finds no actionable new issues; it reports uncertainties and does not substitute agent judgment for human verdicts.
 
 ## Verification
 
@@ -93,4 +93,4 @@ dotnet stryker --config-file stryker-config.json --output .tools/stryker-output 
 
 ## Remaining submission work
 
-The exact workshop review prompt/review, every finding's participant verdict, final write-up/links and an uploaded accessible 8–10-minute MP4 remain pending. [Draft PR #1](https://github.com/shray0027/ai-sdlc-demo-app/pull/1) preserves the separate implementation commits. [Phase 7 evidence](docs/evidence/PHASE_7.md) maps all 27 scenarios to tests and records the finding ledger; task 5.1 is complete, while 5.2/5.3 remain open. The video must show live execution; reading these files alone is insufficient. [ACTION_PLAN.md](ACTION_PLAN.md) tracks remaining work. This write-up is a current evidence record, not a claim that the assignment is already submitted or complete.
+Final submission links/write-up handoff and an uploaded accessible 8–10-minute MP4 remain pending. [PR #1](https://github.com/shray0027/ai-sdlc-demo-app/pull/1) preserves the separate implementation commits. [Phase 7 evidence](docs/evidence/PHASE_7.md) maps all 27 scenarios to tests, records the exact workshop review and all finding verdicts; OpenSpec tasks 5.1–5.3 are complete. OpenSpec covers engineering/review handoff, not the unfinished demo/submission process. The video must show live execution; reading these files alone is insufficient. [ACTION_PLAN.md](ACTION_PLAN.md) tracks remaining work. This write-up is a current evidence record, not a claim that the assignment is already submitted or complete.

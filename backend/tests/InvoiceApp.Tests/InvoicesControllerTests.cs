@@ -46,7 +46,9 @@ public class InvoicesControllerTests
         using var app = new WebApplicationFactory<Program>(); using var client = Session(app, "Manager");
         var response = await client.PostAsync("/api/invoices", new StringContent("{\"customerName\":\"test\",\"amount\":" + amount + "}", Encoding.UTF8, "application/json"));
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
-        var json = await response.Content.ReadFromJsonAsync<JsonElement>(); Assert.Equal(decimal.Parse(amount, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture), json.GetProperty("amount").GetDecimal());
+        var json = await response.Content.ReadFromJsonAsync<JsonElement>();
+        foreach (var field in new[] { "firstApprovedBy", "firstApprovedRole", "firstApprovedAt" }) Assert.Equal(JsonValueKind.Null, json.GetProperty(field).ValueKind);
+        Assert.Equal(decimal.Parse(amount, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture), json.GetProperty("amount").GetDecimal());
     }
 
     [Fact]

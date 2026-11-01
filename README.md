@@ -27,7 +27,7 @@ These are demo accounts for a local, in-memory app. They are not real credential
 2. Submit it for approval.
 3. A Manager approves through USD 50,000 inclusive; a Director approves through USD 500,000 inclusive. Either may reject with a reason. Admin can delete but cannot approve or reject.
 
-Stage one is implemented: amounts above USD 500,000 return a two-person-workflow-unavailable conflict without changes. Two-person approval is a later stage. Positive USD amounts must be numeric whole cents (trailing zeros accepted); fractional cents are rejected without rounding. All lifecycle changes are atomic and repository results are detached snapshots. Restart and sign in again after migrating accounts, since existing sessions retain their roles. The creation form preserves the entered numeric value exactly in JSON, including trailing zeros and fractional cents; the server validates it without rounding. Displayed amounts still use JavaScript numbers and can be approximate for very large values.
+Above USD 500,000, a Manager or Director records the first approval while the invoice remains PendingApproval. A distinct Director completes approval. Canonical usernames must differ, even across logins or role changes. First approver identity, role and UTC time remain in the invoice after completion or intentional rejection; final decision fields remain null until a final decision. Pending progress is shown from server metadata after refresh or reload. Positive USD amounts must be numeric whole cents (trailing zeros accepted); fractional cents are rejected without rounding. All lifecycle changes are atomic and repository results are detached snapshots. Restart and sign in again after migrating accounts, since existing sessions retain their roles. The creation form preserves the entered numeric value exactly in JSON, including trailing zeros and fractional cents; the server validates it without rounding. Displayed amounts still use JavaScript numbers and can be approximate for very large values.
 
 Invoices move through Draft, Pending Approval, then Approved or Rejected.
 
@@ -38,7 +38,7 @@ dotnet test backend/InvoiceApp.sln
 node --test backend/tests/ui/*.test.cjs
 ```
 
-The dependency-free Node tests exercise the creation form submit handler and exact JSON amount transport. They are not browser end-to-end tests.
+The dependency-free Node tests exercise the creation form submit handler, exact JSON amount transport, pending approval rendering and visible decision errors. They are not browser end-to-end tests.
 
 ## Project layout
 

@@ -1,6 +1,6 @@
 namespace InvoiceApp.Domain;
 
-/// <summary>Atomic invoice lifecycle and stage-one final approval limits.</summary>
+/// <summary>Atomic invoice lifecycle with role limits and distinct-person approvals.</summary>
 public class ApprovalService(IInvoiceRepository repository)
 {
     public Invoice Submit(string invoiceId) => repository.Mutate(invoiceId, invoice =>
@@ -17,9 +17,22 @@ public class ApprovalService(IInvoiceRepository repository)
         {
             EnsurePending(invoice);
             UsdAmount.Validate(invoice.Amount);
+            EnsureFirstApprovalMetadata(invoice);
             if (invoice.Amount > 500000m)
-                throw new InvalidOperationException("Two-person approval workflow is unavailable in this stage for amounts above USD 500,000.");
-            if (role == "Manager" && invoice.Amount > 50000m)
+            {
+                if (invoice.FirstApprovedBy == null)
+                {
+                    invoice.FirstApprovedBy = approver;
+                    invoice.FirstApprovedRole = role;
+                    invoice.FirstApprovedAt = DateTime.UtcNow;
+                    return;
+                }
+                if (string.Equals(invoice.FirstApprovedBy, approver, StringComparison.Ordinal))
+                    throw new InvalidOperationException("A distinct approver is required; the same user cannot approve twice.");
+                if (role != "Director")
+                    throw new InvalidOperationException("A distinct Director is required for the second approval.");
+            }
+            if (invoice.Amount <= 500000m && role == "Manager" && invoice.Amount > 50000m)
                 throw new InvalidOperationException("Manager approval limit is USD 50,000 inclusive; a Director is required.");
             invoice.Status = InvoiceStatus.Approved;
             invoice.DecidedBy = approver;
@@ -35,11 +48,25 @@ public class ApprovalService(IInvoiceRepository repository)
         return repository.Mutate(invoiceId, invoice =>
         {
             EnsurePending(invoice);
+            EnsureFirstApprovalMetadata(invoice);
             invoice.Status = InvoiceStatus.Rejected;
             invoice.DecidedBy = approver;
             invoice.DecidedAt = DateTime.UtcNow;
             invoice.DecisionNote = reason;
         });
+    }
+
+    private static void EnsureFirstApprovalMetadata(Invoice invoice)
+    {
+        if (invoice.Amount > 500000m && (invoice.DecidedBy != null || invoice.DecidedAt != null || invoice.DecisionNote != null))
+            throw new InvalidOperationException("Pending high-value invoice has invalid final decision metadata.");
+        if (invoice.FirstApprovedBy == null && invoice.FirstApprovedRole == null && invoice.FirstApprovedAt == null)
+            return;
+        if (string.IsNullOrWhiteSpace(invoice.FirstApprovedBy) ||
+            invoice.FirstApprovedRole is not ("Manager" or "Director") ||
+            invoice.FirstApprovedAt == null || invoice.FirstApprovedAt == default(DateTime) ||
+            invoice.FirstApprovedAt.Value.Kind != DateTimeKind.Utc || invoice.Amount <= 500000m)
+            throw new InvalidOperationException("Invoice has invalid or incomplete first-approval metadata.");
     }
 
     private static void EnsureActor(string identity, string role)

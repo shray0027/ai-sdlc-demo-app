@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–4 are complete, including participant confirmation of stage-one test review for commit `5cf4d61`. Phase 5 technical implementation and agent verification are complete; its participant generated-test review remains pending. Phase 6 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -75,15 +75,15 @@ Use a dedicated implementation prompt for this stage. Do not include the complet
 
 Use a separate implementation prompt based on the reviewed specification and stage-one behavior.
 
-- [ ] Implement the pending-first-approval and final-approval transitions for invoices above 500,000.
-- [ ] Require a distinct second approver who is a Director.
-- [ ] Reject duplicate-user attempts even when the same user has a Director role.
-- [ ] Validate a rejected attempt before changing invoice state or related approval records.
-- [ ] Add and review tests for valid two-person approval, duplicate users, and an invalid second approver.
-- [ ] Run stage-one tests again to confirm lower-value approvals still behave correctly.
-- [ ] Commit this stage separately with a message explaining the two-person rule.
+- [x] Implement the pending-first-approval and final-approval transitions for invoices above 500,000.
+- [x] Require a distinct second approver who is a Director.
+- [x] Reject duplicate-user attempts even when the same user has a Director role.
+- [x] Validate a rejected attempt before changing invoice state or related approval records.
+- [x] Add and review tests for valid two-person approval, duplicate users, and an invalid second approver.
+- [x] Run stage-one tests again to confirm lower-value approvals still behave correctly.
+- [x] Commit this stage separately with a message explaining the two-person rule.
 
-**Exit evidence:** a second self-contained implementation commit and passing tests covering FR-03, FR-04, and FR-05.
+**Exit evidence:** a second self-contained implementation commit and passing tests covering FR-03, FR-04, and FR-05. Technical evidence: [PHASE_5.md](docs/evidence/PHASE_5.md). 171 .NET and 46 Node cases pass; task 3.8 remains open for actual participant test review. No Playwright or mutation completion is claimed.
 
 ## 6. Verify behavior and strengthen tests
 

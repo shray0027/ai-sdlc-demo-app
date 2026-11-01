@@ -1,0 +1,63 @@
+Started UTC: 2026-11-01T14:14:26.434573+00:00
+Task: /root/stage_two; parent: /root
+Working directory: /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app
+Node on PATH: v24.18.0
+DOTNET_ROOT: /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/.tools/dotnet
+Command: node --test backend/tests/ui/approval-progress.test.cjs backend/tests/ui/invoice-create.test.cjs
+
+✔ actual rendering shows server first approval after refresh and fresh app reload, then removes completed pending item (39.251416ms)
+✔ visible decision error survives refresh state for Manager approval limit is USD 50,000 inclusive; a Director is required. (1.414459ms)
+✔ visible decision error survives refresh state for A distinct approver is required; the same user cannot approve twice. (1.1315ms)
+✔ visible decision error survives refresh state for A distinct Director is required for the second approval. (1.057458ms)
+✔ form preserves exact numeric token 50000.0000000000000000000000001 (31.950291ms)
+✔ form preserves exact numeric token 500000.000000000000000000000001 (0.544875ms)
+✔ form preserves exact numeric token 79228162514264337593543950335.1 (0.441083ms)
+✔ form preserves exact numeric token 50000.000 (0.3335ms)
+✔ form preserves exact numeric token 0.01 (0.317916ms)
+✔ form preserves exact numeric token 49999.99 (0.265834ms)
+✔ form preserves exact numeric token 50000.01 (0.262583ms)
+✔ form preserves exact numeric token 500000.01 (0.258958ms)
+✔ form preserves exact numeric token 5e4 (0.281666ms)
+✔ form preserves exact numeric token 1e-2 (0.324417ms)
+✔ form preserves exact numeric token 500000000000000000000000000001e-24 (0.293791ms)
+✔ form preserves exact numeric token 0 (0.259791ms)
+✔ form preserves exact numeric token -0.01 (0.235375ms)
+✔ form preserves exact numeric token 0.001 (0.2415ms)
+✔ form normalizes JSON syntax without changing value: +00050000.000 (0.283417ms)
+✔ form normalizes JSON syntax without changing value: .01 (0.238666ms)
+✔ form normalizes JSON syntax without changing value: -.01 (0.240333ms)
+✔ form normalizes JSON syntax without changing value: 000.0100 (0.236042ms)
+✔ form normalizes JSON syntax without changing value: 1. (0.229791ms)
+✔ form normalizes JSON syntax without changing value: +001.e+004 (0.241ms)
+✔ form normalizes JSON syntax without changing value:   +00050.00100e-02   (0.218292ms)
+✔ invalid amount cannot inject JSON or submit: "" (0.282584ms)
+✔ invalid amount cannot inject JSON or submit: " " (0.218375ms)
+✔ invalid amount cannot inject JSON or submit: "." (0.216333ms)
+✔ invalid amount cannot inject JSON or submit: "+" (0.228708ms)
+✔ invalid amount cannot inject JSON or submit: "NaN" (0.210458ms)
+✔ invalid amount cannot inject JSON or submit: "Infinity" (0.217541ms)
+✔ invalid amount cannot inject JSON or submit: "0x10" (0.206708ms)
+✔ invalid amount cannot inject JSON or submit: "1_000" (0.236292ms)
+✔ invalid amount cannot inject JSON or submit: "1,000" (0.226208ms)
+✔ invalid amount cannot inject JSON or submit: "1e" (0.226792ms)
+✔ invalid amount cannot inject JSON or submit: "1e+" (0.215708ms)
+✔ invalid amount cannot inject JSON or submit: "1 2" (0.641459ms)
+✔ invalid amount cannot inject JSON or submit: "1\n2" (0.287042ms)
+✔ invalid amount cannot inject JSON or submit: "\"50000\"" (0.243666ms)
+✔ invalid amount cannot inject JSON or submit: "1,\"role\":\"Director\"" (0.244709ms)
+✔ invalid amount cannot inject JSON or submit: "1}" (0.232125ms)
+✔ invalid amount cannot inject JSON or submit: "1/*comment*/" (0.213875ms)
+✔ invalid amount cannot inject JSON or submit: "1e2,\"customerName\":\"injected\"" (0.221583ms)
+✔ invalid amount cannot inject JSON or submit: "{\"amount\":1}" (0.213459ms)
+✔ invalid amount cannot inject JSON or submit: "1;alert(1)" (0.223916ms)
+✔ customer text is safely JSON encoded alongside exact amount (1.289875ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.254292
+
+Exit code: 0

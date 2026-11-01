@@ -162,12 +162,59 @@ Request:
 done
 ```
 
+## phase-5-stage-two
+
+- Capture: agent-authored task metadata linked to automatic transcript exports
+- Outcome: Stage-two technical implementation and independent agent review complete; participant test review pending; Phase 6 not started
+
+Request:
+
+```text
+continue
+```
+
+## phase-5-implementation
+
+- Capture: agent-authored task metadata linked to automatic transcript exports
+- Outcome: Stage-two implementation delivered for coordinator integration; no source changes outside assigned scope and no commit by worker
+
+Request:
+
+```text
+Implement Phase 5/stage TWO only in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app. Stage-one commit is 5cf4d61 and its participant test review is recorded in e869ce4. Read AGENTS.md, invoice-assignment implementation/testing skill, generated openspec-apply-change skill and all context artifacts returned by actual local OpenSpec status/apply instructions for invoice-approval-limits. Use Node 24.18.0 on PATH and OPENSPEC_TELEMETRY=0 for .tools/openspec/node_modules/.bin/openspec. Scope: tasks 3.2–3.7 plus technical portions of 3.8. Add nullable FirstApprovedBy/FirstApprovedRole/FirstApprovedAt, initially null and serialized camelCase. For valid amounts above 500,000 accept Manager or Director first, leaving PendingApproval and final decision fields null; a different canonical authenticated username with Director role can then complete approval, preserving all first metadata. Reject duplicate identity even for the same Director using another login/token or the same canonical user after role change; check duplicate identity before wrong-second-role where relevant. Distinct Manager second must fail clearly. Fail closed on partial/invalid first metadata without clearing or overwriting it. Preserve first metadata after final approval and intentional rejection; the first approver may intentionally Reject, since that is not a second approval. Keep rules inside Domain and retain atomic copy-on-write repository semantics and exact cents/JSON/form transport. Extend complete-state snapshots and copy/rollback tests to exercise populated new fields independently of production copying. Replace ONLY the temporary high-value-workflow-unavailable test rows from stage one with final first/second workflow cases; retain every lower-value, precision, authority, snapshot and API error regression. Cover domain/API valid Manager+Director and Director+Director, same Director twice, actual re-login/new token, changed-role same identity, distinct non-Director second, malformed/partial metadata, intentional rejection/blank-reason/terminal-state failures, and high-value real-repository races with separate service instances (same Director, distinct Directors, Manager/Director order, competing final approvals, approve/reject/delete). Assert serially valid outcomes and full stable responses; do not demand globally unchanged state while another operation succeeds. Update UI pending progress from server metadata and show it correctly after refresh/reload; retain visible errors and Manager over-limit Approve action. Add focused dependency-free Node tests of actual rendering with DOM/fetch stubs if useful; do not add Playwright/browser/E2E or mutation runs in this stage. Update README and index hints to remove temporary unavailable-workflow language. You own backend/**, README.md and only docs/evidence/phase-5/implementation-tests.txt and implementation-node-tests.txt as runtime evidence; do not edit AGENTS, action plans, OpenSpec artifacts/checkboxes, interaction logs or .vscode files. Run .tools/dotnet/dotnet test backend/InvoiceApp.sln and node --test backend/tests/ui/*.test.cjs with actual captured outputs. Delegate one read-only test-review child when code/tests are ready; save its exact prompts in docs/agents/stage-two-test-review-prompt.txt and result in docs/agents/stage-two-test-review.md, with actual task/parent IDs. Have it independently review FR-04/FR-05 and new metadata/concurrency/UI assertions, investigate real defects and recheck fixes; it may run scoped tests but must not edit source/tests. Human review is not supplied; keep it pending. Fix routine implementation/build/test defects within the approved design rather than stopping at the first error. Do not commit; coordinator will independently review, record evidence/context and make a separate stage-two commit. Report actual edits, commands/results, removed temporary expectations versus retained regressions, child findings/handling and limitations.
+```
+
+## phase-5-test-review
+
+- Capture: agent-authored task metadata linked to automatic transcript exports
+- Outcome: No unresolved production correctness finding; reported coverage gap addressed; human verdict pending
+
+Request:
+
+```text
+Task: /root/stage_two/test_review
+Parent task: /root/stage_two
+Coordinator: /root
+Session/model: unknown unless supplied by runtime
+Exact initial delegation prompt:
+Independently review stage-two production changes and generated tests in /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app against FR-01–FR-05, especially FR-04 distinct canonical username across repeat Director calls, actual login/new token and role changes, FR-05 full persisted unchanged state, all-or-none/invalid first metadata, preserved first history after approval/rejection, exact cents and retained stage-one regressions, real-repository concurrency serial outcomes/stable responses, and UI rendering/refresh/reload/error assertions. Read AGENTS.md, invoice-assignment review/testing skill, relevant OpenSpec spec/design/tasks and actual changed source/tests. This is independent agent test review, not workshop/human review. You must not edit source/tests or other repository files. Investigate concrete defects and gaps, run scoped tests if useful with Node 24.18.0 and repository-local .NET SDK; do not run browser/E2E or mutation tests. Return finding IDs with severity, exact evidence and practical fix, plus what you checked and limitations. No findings must be stated explicitly if none. After fixes I may request a read-only recheck. Parent owns saving your exact result and dispositions; participant verdicts remain pending.
+
+Exact follow-up message 1:
+Follow-up under review: moved high-value null-final-fields validation into EnsureFirstApprovalMetadata so intentional Reject also fails closed for inconsistent pending final metadata. Added Reject assertion to InconsistentTierOrFinalMetadata_FailsClosed. Initial full runs before this small change passed 150 .NET and 46 Node tests; final capture pending your review.
+
+Exact follow-up message 2:
+I independently added populated-first Domain actor/amount rows just now and API Draft/Approved/Rejected plus individual inconsistent-final fields cases; see HighValueHistory_OtherFailedBranchesPreservePopulatedFirstFields and TerminalOrDraftWithFirstHistory_AllDecisionFailuresPreserveState. Adding equivalent populated-first API role/identity/amount rows next to close ST2-T01 completely; please recheck these fixes as part of review.
+
+Exact recheck prompt:
+ST2-T01 fix ready for read-only recheck: populated-first Domain HighValueHistory_OtherFailedBranchesPreservePopulatedFirstFields and API ActorOrAmountDenials_PreservePopulatedFirstHistory now cover Admin/legacy/unknown roles, blank identity, invalid high precision and zero amounts with fresh complete state comparisons. API terminal-history test now covers Draft/Approved/Rejected. Creation tests also explicitly assert all three new camelCase JSON fields initially null. Please recheck the current diff and return your exact final review with finding ST2-T01, technical resolution status, actual test commands/results and remaining limitations. Participant verdict remains pending.
+```
+
 Native lifecycle events recorded: 5.
 
 ## Transcript exports
 
 - [01a1962b-509e-7242-8b6a-237e1d68184a](transcripts/01a1962b-509e-7242-8b6a-237e1d68184a.jsonl): 32 selected records.
-- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 303 selected records.
+- [01a1963c-ca5d-7b93-88dc-d1050165e8d3](transcripts/01a1963c-ca5d-7b93-88dc-d1050165e8d3.jsonl): 354 selected records.
 - [01a19643-4f87-7121-89ab-0f45a59cb0ec](transcripts/01a19643-4f87-7121-89ab-0f45a59cb0ec.jsonl): 30 selected records.
 - [01a19643-8489-75d3-a9d5-abacc5963028](transcripts/01a19643-8489-75d3-a9d5-abacc5963028.jsonl): 6 selected records.
 - [01a19643-9ccb-77c0-8079-876566695e8b](transcripts/01a19643-9ccb-77c0-8079-876566695e8b.jsonl): 10 selected records.
@@ -178,5 +225,7 @@ Native lifecycle events recorded: 5.
 - [01a1969f-a291-70e3-bb75-d52300478602](transcripts/01a1969f-a291-70e3-bb75-d52300478602.jsonl): 25 selected records.
 - [01a196ac-9913-7ff0-aa52-912a845f8e7f](transcripts/01a196ac-9913-7ff0-aa52-912a845f8e7f.jsonl): 92 selected records.
 - [01a196ae-fa0d-7773-8027-3d12bd391687](transcripts/01a196ae-fa0d-7773-8027-3d12bd391687.jsonl): 60 selected records.
+- [01a1976f-24f3-7673-9a57-7156901c1daa](transcripts/01a1976f-24f3-7673-9a57-7156901c1daa.jsonl): 64 selected records.
+- [01a19773-53d8-7031-b381-c6f1daff5a4d](transcripts/01a19773-53d8-7031-b381-c6f1daff5a4d.jsonl): 59 selected records.
 
 Coverage, redaction and activation limits are described in [README.md](README.md).

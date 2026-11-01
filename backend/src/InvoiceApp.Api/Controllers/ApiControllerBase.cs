@@ -20,6 +20,10 @@ public abstract class ApiControllerBase : ControllerBase
         {
             return Conflict(new { error = ex.Message });
         }
+        catch (UnauthorizedAccessException ex)
+        {
+            return StatusCode(403, new { error = ex.Message });
+        }
         catch (ArgumentException ex)
         {
             return BadRequest(new { error = ex.Message });

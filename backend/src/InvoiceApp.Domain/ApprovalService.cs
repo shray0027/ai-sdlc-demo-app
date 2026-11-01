@@ -1,73 +1,58 @@
 namespace InvoiceApp.Domain;
 
-/// <summary>
-/// Moves an invoice through its lifecycle: Draft -> PendingApproval -> Approved or Rejected.
-/// One invoice at a time, decided as a whole by a single approver.
-/// </summary>
-public class ApprovalService
+/// <summary>Atomic invoice lifecycle and stage-one final approval limits.</summary>
+public class ApprovalService(IInvoiceRepository repository)
 {
-    private readonly IInvoiceRepository _repository;
-
-    public ApprovalService(IInvoiceRepository repository)
+    public Invoice Submit(string invoiceId) => repository.Mutate(invoiceId, invoice =>
     {
-        _repository = repository;
-    }
-
-    public Invoice Submit(string invoiceId)
-    {
-        var invoice = Find(invoiceId);
-
         if (invoice.Status != InvoiceStatus.Draft)
-        {
-            throw new InvalidOperationException(
-                $"Invoice {invoiceId} is {invoice.Status}; only drafts can be submitted.");
-        }
-
+            throw new InvalidOperationException($"Invoice {invoiceId} is {invoice.Status}; only drafts can be submitted.");
         invoice.Status = InvoiceStatus.PendingApproval;
-        _repository.Update(invoice);
-        return invoice;
-    }
+    });
 
-    public Invoice Approve(string invoiceId, string approver)
+    public Invoice Approve(string invoiceId, string approver, string role)
     {
-        var invoice = Find(invoiceId);
-        EnsurePending(invoice);
-
-        invoice.Status = InvoiceStatus.Approved;
-        invoice.DecidedBy = approver;
-        invoice.DecidedAt = DateTime.UtcNow;
-        _repository.Update(invoice);
-        return invoice;
-    }
-
-    public Invoice Reject(string invoiceId, string approver, string reason)
-    {
-        if (string.IsNullOrWhiteSpace(reason))
+        EnsureActor(approver, role);
+        return repository.Mutate(invoiceId, invoice =>
         {
-            throw new ArgumentException("A reason is required to reject an invoice.", nameof(reason));
-        }
-
-        var invoice = Find(invoiceId);
-        EnsurePending(invoice);
-
-        invoice.Status = InvoiceStatus.Rejected;
-        invoice.DecidedBy = approver;
-        invoice.DecidedAt = DateTime.UtcNow;
-        invoice.DecisionNote = reason;
-        _repository.Update(invoice);
-        return invoice;
+            EnsurePending(invoice);
+            UsdAmount.Validate(invoice.Amount);
+            if (invoice.Amount > 500000m)
+                throw new InvalidOperationException("Two-person approval workflow is unavailable in this stage for amounts above USD 500,000.");
+            if (role == "Manager" && invoice.Amount > 50000m)
+                throw new InvalidOperationException("Manager approval limit is USD 50,000 inclusive; a Director is required.");
+            invoice.Status = InvoiceStatus.Approved;
+            invoice.DecidedBy = approver;
+            invoice.DecidedAt = DateTime.UtcNow;
+        });
     }
 
-    private Invoice Find(string invoiceId) =>
-        _repository.GetById(invoiceId)
-        ?? throw new KeyNotFoundException($"Invoice {invoiceId} was not found.");
+    public Invoice Reject(string invoiceId, string approver, string role, string reason)
+    {
+        EnsureActor(approver, role);
+        if (string.IsNullOrWhiteSpace(reason))
+            throw new ArgumentException("A reason is required to reject an invoice.", nameof(reason));
+        return repository.Mutate(invoiceId, invoice =>
+        {
+            EnsurePending(invoice);
+            invoice.Status = InvoiceStatus.Rejected;
+            invoice.DecidedBy = approver;
+            invoice.DecidedAt = DateTime.UtcNow;
+            invoice.DecisionNote = reason;
+        });
+    }
+
+    private static void EnsureActor(string identity, string role)
+    {
+        if (string.IsNullOrWhiteSpace(identity))
+            throw new ArgumentException("An authenticated approver identity is required.", nameof(identity));
+        if (role is not ("Manager" or "Director"))
+            throw new UnauthorizedAccessException("Only Managers and Directors may approve or reject invoices.");
+    }
 
     private static void EnsurePending(Invoice invoice)
     {
         if (invoice.Status != InvoiceStatus.PendingApproval)
-        {
-            throw new InvalidOperationException(
-                $"Invoice {invoice.Id} is {invoice.Status}; only pending invoices can be decided.");
-        }
+            throw new InvalidOperationException($"Invoice {invoice.Id} is {invoice.Status}; only pending invoices can be decided.");
     }
 }

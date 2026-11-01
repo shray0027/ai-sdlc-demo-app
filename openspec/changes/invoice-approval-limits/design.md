@@ -67,7 +67,7 @@ Stage two separately adds first metadata, two-person transitions, progress UI, D
 - Username identifies configured accounts rather than real people → use unique canonical demo usernames and preserve exact login; a future rename/identity-provider migration needs a separate stable-ID design.
 - New Director accounts and loss of Admin approval authority change demo compatibility → update account hints/docs and test Admin/legacy denials; label migration as agent-selected.
 - JSON/UI may make first approval look final → render pending progress and keep final fields null until completion.
-- Large decimals may exceed JavaScript exact cents → server decimal validation is authoritative; boundary tests use exactly representable JSON numeric examples; large-value UI transport is a demo limitation to disclose rather than silently rounding server values.
+- JavaScript Number conversion can round raw form input before the server sees it → preserve the input as a validated/normalized JSON numeric token, without Number/parseFloat conversion; the API exact-decimal converter rejects lossy parsing and Domain validates whole cents. Browser formatting of very large returned numbers can still be approximate; stored values and approval policy remain server-decimal based.
 - Test fake can hide real lock bugs → test real repository snapshots and races with separate service instances, not just the fake.
 
 ## Migration Plan

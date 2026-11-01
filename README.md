@@ -4,7 +4,9 @@ A small invoice approval app used for live AI-in-SDLC demos. It is deliberately 
 
 ## Run it
 
-```
+```sh
+export DOTNET_ROOT="$PWD/.tools/dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
 dotnet run --project backend/src/InvoiceApp.Api
 ```
 
@@ -12,7 +14,9 @@ Open http://localhost:5000 and sign in:
 
 | User | Password | Role |
 | --- | --- | --- |
-| `demo.approver` | `ChangeMe123!` | Approver |
+| `demo.approver` | `ChangeMe123!` | Manager |
+| `demo.director1` | `ChangeMe123!` | Director |
+| `demo.director2` | `ChangeMe123!` | Director |
 | `demo.admin` | `ChangeMe123!` | Admin |
 
 These are demo accounts for a local, in-memory app. They are not real credentials.
@@ -21,7 +25,9 @@ These are demo accounts for a local, in-memory app. They are not real credential
 
 1. Create an invoice (it starts as a draft).
 2. Submit it for approval.
-3. An approver approves it, or rejects it with a reason.
+3. A Manager approves through USD 50,000 inclusive; a Director approves through USD 500,000 inclusive. Either may reject with a reason. Admin can delete but cannot approve or reject.
+
+Stage one is implemented: amounts above USD 500,000 return a two-person-workflow-unavailable conflict without changes. Two-person approval is a later stage. Positive USD amounts must be numeric whole cents (trailing zeros accepted); fractional cents are rejected without rounding. All lifecycle changes are atomic and repository results are detached snapshots. Restart and sign in again after migrating accounts, since existing sessions retain their roles. The creation form preserves the entered numeric value exactly in JSON, including trailing zeros and fractional cents; the server validates it without rounding. Displayed amounts still use JavaScript numbers and can be approximate for very large values.
 
 Invoices move through Draft, Pending Approval, then Approved or Rejected.
 
@@ -29,7 +35,10 @@ Invoices move through Draft, Pending Approval, then Approved or Rejected.
 
 ```
 dotnet test backend/InvoiceApp.sln
+node --test backend/tests/ui/*.test.cjs
 ```
+
+The dependency-free Node tests exercise the creation form submit handler and exact JSON amount transport. They are not browser end-to-end tests.
 
 ## Project layout
 

@@ -10,7 +10,7 @@ Invoice approval demo app: ASP.NET Core 8 Web API with a small static web UI.
 - `e2e`: Playwright end-to-end tests (`tests/`) and page objects (`pages/`).
 - `docs/use-cases`: short briefs for features we may build.
 
-## Assignment rules (required behavior, not yet implemented)
+## Assignment rules and stage status
 
 Source: `requirements/REQUIREMENTS.md`. Follow `ACTION_PLAN.md` in phases.
 
@@ -20,19 +20,19 @@ Source: `requirements/REQUIREMENTS.md`. Follow `ACTION_PLAN.md` in phases.
 - **FR-04:** One user must never count as both approvers, including a Director approving twice.
 - **FR-05:** Every rejected approval attempt must give a clear reason and leave the entire invoice and its approval records unchanged.
 
-Do not assume Admin bypasses these rules. The current Approver/Admin roles are baseline behavior. Phase 3 decisions are recorded in `docs/decisions/approval-policy.md` and the reviewed draft at `openspec/changes/invoice-approval-limits/`. The participant chose Manager or Director for the high-value first approval and positive USD values with at most two decimal places. Agent-selected design uses canonical authenticated username identity, separate first-approval metadata while PendingApproval, Manager/Director approval roles without an Admin bypass, and atomic copy-on-write repository transitions. These are specification decisions; implementation remains pending.
+Stage one implements FR-01/FR-02 and unchanged-state failures for its current approval paths. FR-03/FR-04 two-person transitions remain Phase 5 work. Above 500,000, stage one deliberately returns a clear unavailable-workflow conflict with no mutation. Admin has no approval bypass; baseline Approver has migrated to Manager. Phase 3 decisions are recorded in `docs/decisions/approval-policy.md` and the reviewed draft at `openspec/changes/invoice-approval-limits/`. The participant chose Manager or Director for the high-value first approval and positive USD values with at most two decimal places. Agent-selected design uses canonical authenticated username identity, separate first-approval metadata while PendingApproval, Manager/Director approval roles without an Admin bypass, and atomic copy-on-write repository transitions. First-approval metadata and transitions are still specification-only; the single-approver, monetary, authenticated-role and atomicity parts are implemented.
 
 ## Conventions
 
 - Controllers live in `Controllers/`, one per resource, route `api/[controller]`. Request bodies are `record` types declared inside the controller.
 - Controllers inherit `ApiControllerBase` and use `Handle(...)` so service errors map to 404, 409 and 400.
-- Every API endpoint except login requires sign-in. Destructive actions are Admin only. Baseline approvals allow Approver/Admin; migrate authorization deliberately with the specification. Pass role and identity from the authenticated server-side session, never trust a role supplied in an approval request body.
+- Every API endpoint except login requires sign-in. Destructive actions are Admin only. Approval and intentional rejection allow Manager/Director only; legacy Approver, Admin and unknown roles cannot approve/reject. Pass role and identity from the authenticated server-side session, never trust a role supplied in an approval request body.
 - Business rules go in the Domain project, never in controllers.
 - Register services in `Program.cs`. Repositories are interfaces in Domain with an in-memory implementation in Api.
 - Every new rule or endpoint needs tests. Use `FakeInvoiceRepository` in tests.
 - Use clear names; no one-letter variables or `flag` parameters.
 - End-to-end tests use page objects and role-based locators (`getByRole`, `getByLabel`), never CSS or XPath selectors.
-- The in-memory repository returns live references. Validate before mutating any field; a failure before `Update` can still corrupt stored state. Specify atomic transitions for concurrent approval requests.
+- Repositories return detached snapshots and use a shared-lock copy-on-write `Mutate` callback for lifecycle changes. Exceptions discard working-copy changes; no unrestricted `Update` exists. Policy stays in Domain; callbacks must not reenter the repository. Current invoice fields are scalars or immutable strings; future mutable reference fields require deep-copy handling.
 
 ## Test and review expectations
 
@@ -66,11 +66,13 @@ Setup and initial results: `docs/evidence/BASELINE.md`.
 
 - Run the app: `dotnet run --project backend/src/InvoiceApp.Api` then open http://localhost:5000
 - Run the tests: `dotnet test backend/InvoiceApp.sln`
+- Run focused form-transport JavaScript tests: `node --test backend/tests/ui/*.test.cjs` (Node 24 used for validation). These are not browser/E2E tests.
 - Run end-to-end tests: `cd e2e && npm ci && npx playwright install chromium && npm test`
 
 ## Demo accounts (not real credentials)
 
-- `demo.approver` / `ChangeMe123!` (role Approver)
+- `demo.approver` / `ChangeMe123!` (role Manager)
+- `demo.director1` and `demo.director2` / `ChangeMe123!` (distinct Director accounts)
 - `demo.admin` / `ChangeMe123!` (role Admin)
 
 ## Never

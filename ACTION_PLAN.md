@@ -2,7 +2,7 @@
 
 Source: [requirements/REQUIREMENTS.md](requirements/REQUIREMENTS.md).
 
-The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–3 are complete; implementation and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
+The application is checked out in `ai-sdlc-demo-app/` from the participant fork, on `assignment/invoice-approval-limits`. Phases 1–3 are complete. Phase 4 technical implementation and agent verification are complete; participant generated-test review remains pending. Phase 5 and subsequent phases remain pending. Baseline evidence: [BASELINE.md](docs/evidence/BASELINE.md). This plan covers execution through the reviewed pull request, write-up, and demo.
 
 ## 1. Establish the repository and baseline
 
@@ -62,14 +62,14 @@ The log should capture the nine categories from the requirements: tool/model; ag
 
 Use a dedicated implementation prompt for this stage. Do not include the complete two-approver implementation in the same request.
 
-- [ ] Implement Manager approval through 50,000 and Director approval through 500,000, inclusive.
-- [ ] Reject over-limit single-approver attempts with a clear reason and no invoice mutation.
-- [ ] Add and review tests for successful approvals, inclusive boundaries, and rejected attempts.
-- [ ] Ensure the rule is enforced in the approval service rather than relying solely on UI restrictions.
-- [ ] Run the relevant unit tests and existing regression suite.
-- [ ] Commit this stage with a message explaining the limits and the reason for enforcing them.
+- [x] Implement Manager approval through 50,000 and Director approval through 500,000, inclusive.
+- [x] Reject over-limit single-approver attempts with a clear reason and no invoice mutation.
+- [x] Add and review tests for successful approvals, inclusive boundaries, and rejected attempts.
+- [x] Ensure the rule is enforced in the approval service rather than relying solely on UI restrictions.
+- [x] Run the relevant unit tests and existing regression suite.
+- [x] Commit this stage with a message explaining the limits and the reason for enforcing them.
 
-**Exit evidence:** a self-contained implementation commit with passing tests and corresponding interaction logs.
+**Exit evidence:** a self-contained implementation commit with passing tests and corresponding interaction logs. Technical evidence: [PHASE_4.md](docs/evidence/PHASE_4.md). Debug/Release: 98 .NET cases pass; exact-form transport: 42 Node cases pass. OpenSpec task 2.8 remains unchecked pending actual participant test review; stage two is not implemented.
 
 ## 5. Implement stage two: two distinct approvers
 

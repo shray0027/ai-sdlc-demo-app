@@ -41,7 +41,7 @@ public class InvoicesController : ApiControllerBase
     public ActionResult<Invoice> GetById(string id)
     {
         var invoice = _repository.GetById(id);
-        return invoice is null ? NotFound() : Ok(invoice);
+        return invoice is null ? NotFound(new { error = $"Invoice {id} was not found." }) : Ok(invoice);
     }
 
     [HttpPost]
@@ -52,10 +52,8 @@ public class InvoicesController : ApiControllerBase
             return BadRequest(new { error = "Customer name is required." });
         }
 
-        if (request.Amount <= 0)
-        {
-            return BadRequest(new { error = "Amount must be greater than zero." });
-        }
+        try { UsdAmount.Validate(request.Amount); }
+        catch (ArgumentException ex) { return BadRequest(new { error = ex.Message }); }
 
         var invoice = _repository.Add(new Invoice
         {
@@ -72,5 +70,5 @@ public class InvoicesController : ApiControllerBase
     [HttpDelete("{id}")]
     [RequireRole("Admin")]
     public IActionResult Delete(string id) =>
-        _repository.Remove(id) ? NoContent() : NotFound();
+        _repository.Remove(id) ? NoContent() : NotFound(new { error = $"Invoice {id} was not found." });
 }

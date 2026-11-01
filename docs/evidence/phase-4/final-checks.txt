@@ -1,0 +1,68 @@
+✔ form preserves exact numeric token 50000.0000000000000000000000001 (48.99225ms)
+✔ form preserves exact numeric token 500000.000000000000000000000001 (0.518292ms)
+✔ form preserves exact numeric token 79228162514264337593543950335.1 (0.36175ms)
+✔ form preserves exact numeric token 50000.000 (0.330917ms)
+✔ form preserves exact numeric token 0.01 (0.938375ms)
+✔ form preserves exact numeric token 49999.99 (0.329459ms)
+✔ form preserves exact numeric token 50000.01 (0.286709ms)
+✔ form preserves exact numeric token 500000.01 (0.258667ms)
+✔ form preserves exact numeric token 5e4 (0.285125ms)
+✔ form preserves exact numeric token 1e-2 (0.335334ms)
+✔ form preserves exact numeric token 500000000000000000000000000001e-24 (0.269667ms)
+✔ form preserves exact numeric token 0 (0.26175ms)
+✔ form preserves exact numeric token -0.01 (0.23275ms)
+✔ form preserves exact numeric token 0.001 (0.242916ms)
+✔ form normalizes JSON syntax without changing value: +00050000.000 (0.307083ms)
+✔ form normalizes JSON syntax without changing value: .01 (0.243917ms)
+✔ form normalizes JSON syntax without changing value: -.01 (0.244625ms)
+✔ form normalizes JSON syntax without changing value: 000.0100 (0.666667ms)
+✔ form normalizes JSON syntax without changing value: 1. (9.259792ms)
+✔ form normalizes JSON syntax without changing value: +001.e+004 (6.443375ms)
+✔ form normalizes JSON syntax without changing value:   +00050.00100e-02   (0.34275ms)
+✔ invalid amount cannot inject JSON or submit: "" (0.411875ms)
+✔ invalid amount cannot inject JSON or submit: " " (0.25025ms)
+✔ invalid amount cannot inject JSON or submit: "." (0.23825ms)
+✔ invalid amount cannot inject JSON or submit: "+" (0.24975ms)
+✔ invalid amount cannot inject JSON or submit: "NaN" (0.219667ms)
+✔ invalid amount cannot inject JSON or submit: "Infinity" (0.24125ms)
+✔ invalid amount cannot inject JSON or submit: "0x10" (0.22125ms)
+✔ invalid amount cannot inject JSON or submit: "1_000" (0.224833ms)
+✔ invalid amount cannot inject JSON or submit: "1,000" (0.247042ms)
+✔ invalid amount cannot inject JSON or submit: "1e" (0.230375ms)
+✔ invalid amount cannot inject JSON or submit: "1e+" (0.275917ms)
+✔ invalid amount cannot inject JSON or submit: "1 2" (13.88375ms)
+✔ invalid amount cannot inject JSON or submit: "1\n2" (0.398916ms)
+✔ invalid amount cannot inject JSON or submit: "\"50000\"" (0.263792ms)
+✔ invalid amount cannot inject JSON or submit: "1,\"role\":\"Director\"" (0.26825ms)
+✔ invalid amount cannot inject JSON or submit: "1}" (0.310916ms)
+✔ invalid amount cannot inject JSON or submit: "1/*comment*/" (0.379833ms)
+✔ invalid amount cannot inject JSON or submit: "1e2,\"customerName\":\"injected\"" (0.279125ms)
+✔ invalid amount cannot inject JSON or submit: "{\"amount\":1}" (0.217667ms)
+✔ invalid amount cannot inject JSON or submit: "1;alert(1)" (0.424083ms)
+✔ customer text is safely JSON encoded alongside exact amount (2.54ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.45375
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  InvoiceApp.Domain -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Domain/bin/Release/net8.0/InvoiceApp.Domain.dll
+  InvoiceApp.Api -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/src/InvoiceApp.Api/bin/Release/net8.0/InvoiceApp.Api.dll
+  InvoiceApp.Tests -> /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/tests/InvoiceApp.Tests/bin/Release/net8.0/InvoiceApp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.07
+Test run for /Users/shrayanand/Documents/learnings/NAGP/ai-sdlc-assignment/ai-sdlc-demo-app/backend/tests/InvoiceApp.Tests/bin/Release/net8.0/InvoiceApp.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:    98, Skipped:     0, Total:    98, Duration: 2 s - InvoiceApp.Tests.dll (net8.0)
